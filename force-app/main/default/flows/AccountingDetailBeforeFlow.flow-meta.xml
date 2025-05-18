@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>setTaxRate</name>
+        <label>消費税率を設定</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ConsumptionTaxRate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TaxRate_F</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SetValues</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetValues</name>
+        <label>値設定</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ClosingDate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>closingDateFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ReportNonTaxable__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NontaxableAmount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ReportTaxable__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TaxableAmount</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>decisionTaxChange</name>
+        <label>「消費税率」の変更を判定</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>SetValues</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>存在</defaultConnectorLabel>
+        <rules>
+            <name>isBlank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ConsumptionTaxRate__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getTaxMeta</targetReference>
+            </connector>
+            <label>空白</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>closingDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    NOT(ISBLANK({!$Record.InvoiceAccount__c})),
+    (
+        IF(
+            OR(
+                ISPICKVAL({!$Record.InvoiceAccount__r.ClosingDate__c}, &quot;Month_End&quot;),
+                ISPICKVAL({!$Record.InvoiceAccount__r.ClosingDate__c}, &quot;Irregular&quot;)
+            ),
+            DATE(YEAR({!$Record.Date__c}), MONTH({!$Record.Date__c}), DAY(ADDMONTHS(DATE(YEAR({!$Record.Date__c}), MONTH({!$Record.Date__c}), 1), 1) - 1)),
+            IF(
+                DAY({!$Record.Date__c}) &lt;= VALUE(RIGHT(TEXT({!$Record.InvoiceAccount__r.ClosingDate__c}), 2)),
+                DATE(YEAR({!$Record.Date__c}), MONTH({!$Record.Date__c}), VALUE(RIGHT(TEXT({!$Record.InvoiceAccount__r.ClosingDate__c}), 2))),
+                ADDMONTHS(DATE(YEAR({!$Record.Date__c}), MONTH({!$Record.Date__c}), VALUE(RIGHT(TEXT({!$Record.InvoiceAccount__r.ClosingDate__c}), 2))), 1)
+            )
+        )
+    ),
+    NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <name>NontaxableAmount</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+ISBLANK({!$Record.ConsumptionTaxRate__c}) || {!$Record.ConsumptionTaxRate__c} = 0,
+{!$Record.Amount__c},
+NULL
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>TaxableAmount</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+ISBLANK({!$Record.ConsumptionTaxRate__c}) || {!$Record.ConsumptionTaxRate__c} = 0,
+NULL,
+{!$Record.Amount__c}
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>TaxRate_F</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+    {!$Record.AccountItem__c},
+    &apos;1_90&apos;, VALUE({!TaxRateNormal}),
+    &apos;1_91&apos;, VALUE({!TaxRateReduced}),
+    &apos;1_92&apos;, 0,
+    &apos;2_90&apos;, VALUE({!TaxRateNormal}),
+    &apos;2_91&apos;, VALUE({!TaxRateReduced}),
+    &apos;2_92&apos;, 0,
+   Null
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>請求・支払明細の高速フロー {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>請求・支払明細の高速フロー</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>getTaxMeta</name>
+        <label>「消費税率」メタデータ</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>setTaxRate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>ConsumptionTaxRate</stringValue>
+            </value>
+        </filters>
+        <object>MFJSetting__mdt</object>
+        <outputAssignments>
+            <assignToReference>TaxRateReduced</assignToReference>
+            <field>Value2__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>TaxRateNormal</assignToReference>
+            <field>Value__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>decisionTaxChange</targetReference>
+        </connector>
+        <object>AccountingDetail__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>TaxRateNormal</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TaxRateReduced</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

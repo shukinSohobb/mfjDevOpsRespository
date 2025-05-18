@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ClosingDate__c</fullName>
+    <label>締日</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Month_15</fullName>
+                <default>false</default>
+                <label>15日</label>
+            </value>
+            <value>
+                <fullName>Month_20</fullName>
+                <default>false</default>
+                <label>20日</label>
+            </value>
+            <value>
+                <fullName>Month_End</fullName>
+                <default>true</default>
+                <label>月末</label>
+            </value>
+            <value>
+                <fullName>Irregular</fullName>
+                <default>false</default>
+                <label>イレギュラー</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

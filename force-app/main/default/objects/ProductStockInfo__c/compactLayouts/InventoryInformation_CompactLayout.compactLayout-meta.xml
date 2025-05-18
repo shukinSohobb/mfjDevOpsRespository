@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InventoryInformation_CompactLayout</fullName>
+    <fields>LotNumber__c</fields>
+    <fields>Name</fields>
+    <fields>ProductMaster__c</fields>
+    <fields>ArrivalDate__c</fields>
+    <fields>ManufactureDate__c</fields>
+    <label>在庫情報_コンパクトレイアウト</label>
+</CompactLayout>

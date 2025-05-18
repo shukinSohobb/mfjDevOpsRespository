@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>路線便ピッキングリスト</label>
+    <protected>false</protected>
+    <values>
+        <field>FormulaField__c</field>
+        <value xsi:type="xsd:string">注文.RouteDeliveryPickingDelayFlag_F__c</value>
+    </values>
+    <values>
+        <field>MessageBody__c</field>
+        <value xsi:type="xsd:string">倉庫課の対応が遅れています</value>
+    </values>
+    <values>
+        <field>Note__c</field>
+        <value xsi:type="xsd:string">積込日の当日の13時まで</value>
+    </values>
+    <values>
+        <field>TransportationMode__c</field>
+        <value xsi:type="xsd:string">Route</value>
+    </values>
+</CustomMetadata>

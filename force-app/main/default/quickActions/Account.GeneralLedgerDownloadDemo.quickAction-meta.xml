@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>元帳のダウンロードのデモを実行します。</description>
+    <flowDefinition>SCR_GeneralLedgerDownloadDemo</flowDefinition>
+    <label>元帳出力</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

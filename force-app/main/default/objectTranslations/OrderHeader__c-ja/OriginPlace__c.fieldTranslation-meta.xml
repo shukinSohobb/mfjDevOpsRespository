@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- いずれかの条件と一致する必要があります。【荷主名※または請求先名】【マルエス(自社)】【荷主名が空のもの】 --></help>
+    <label><!-- 発地 --></label>
+    <lookupFilter>
+        <errorMessage><!-- 選択した発地はこの荷主の注文レコードでは使用できません。 --></errorMessage>
+    </lookupFilter>
+    <name>OriginPlace__c</name>
+    <relationshipLabel><!-- 注文（発地） --></relationshipLabel>
+</CustomFieldTranslation>

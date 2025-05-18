@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 商談から作成された注文の備考テキスト --></help>
+    <label><!-- 商談の備考 --></label>
+    <name>Remarks3__c</name>
+</CustomFieldTranslation>

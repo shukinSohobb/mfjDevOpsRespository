@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 都道府県（発地） --></label>
+    <name>OriginPrefecture__c</name>
+    <picklistValues>
+        <masterLabel>山梨県</masterLabel>
+        <translation><!-- 山梨県 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>福岡県</masterLabel>
+        <translation><!-- 福岡県 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

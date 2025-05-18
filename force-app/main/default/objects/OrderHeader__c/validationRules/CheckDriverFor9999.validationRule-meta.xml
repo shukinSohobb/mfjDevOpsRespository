@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckDriverFor9999</fullName>
+    <active>true</active>
+    <description>注文の車番「9999」に設定の時、ドライバーは入力できません。</description>
+    <errorConditionFormula>/* 判定条件 */
+ VehicleNumber__c == &apos;9999&apos;
+&amp;&amp;
+/* 判定項目 */
+ NOT( ISBLANK( DriverMaster__c ) )</errorConditionFormula>
+    <errorDisplayField>DriverMaster__c</errorDisplayField>
+    <errorMessage>車番が「9999」の場合、ドライバーを入力できません。</errorMessage>
+</ValidationRule>

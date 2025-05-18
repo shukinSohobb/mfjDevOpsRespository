@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CancelPolicy__c</fullName>
+    <inlineHelpText>【基本的な処理】　　　　　　　　　　　　　　　　　　
+①積み込み日の前々日午前中以降：全額　　　　　　　　
+②但しそれ以前の場合も車両手配済時：全額　　　　　　
+【エコー ソース便など】　　　　　　　　　　　　　　　　　　
+①当日キャンセル：全額　　　　　　　　　　　　　　　
+②前日キャンセル：半額</inlineHelpText>
+    <label>キャンセルポリシー</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1</fullName>
+                <default>true</default>
+                <label>基本的な処理</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <label>エコー ソース便など</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

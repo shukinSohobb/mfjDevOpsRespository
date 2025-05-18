@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>action_GeneralLedgerDownloadDemo</name>
+        <label>元帳をダウンロード</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>c:GeneralLedgerDownloadDemo</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>c:GeneralLedgerDownloadDemo</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>元帳ダウンロードのデモを実行するフローです。</description>
+    <environments>Default</environments>
+    <interviewLabel>SCR_GeneralLedgerDownloadDemo {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>元帳ダウンロードデモ</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>action_GeneralLedgerDownloadDemo</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 承認者：係長 --></label>
+    <name>AssistantManagerApprovalUser__c</name>
+    <relationshipLabel><!-- 社内稟議 (承認者：係長) --></relationshipLabel>
+</CustomFieldTranslation>

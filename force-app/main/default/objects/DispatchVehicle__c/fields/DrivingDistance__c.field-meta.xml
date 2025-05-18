@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DrivingDistance__c</fullName>
+    <description>RaySheet：富士エコー運賃明細インポートから転記</description>
+    <externalId>false</externalId>
+    <label>走行距離</label>
+    <precision>9</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

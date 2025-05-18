@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoiceAmountTaxFree_Sum__c</fullName>
+    <label>積み上げ金額（非課税）</label>
+    <summarizedField>AccountingDetail__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>AccountingDetail__c.ConsumptionTaxRate__c</field>
+        <operation>equals</operation>
+        <value>,0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>AccountingDetail__c.InvoiceDocument__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

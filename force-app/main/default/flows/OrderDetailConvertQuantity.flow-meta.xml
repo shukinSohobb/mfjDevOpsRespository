@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>ConvertQuantity</name>
+        <label>数量を換算</label>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.QuantityAfterConversion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ConvertedQuantity</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <customErrors>
+        <name>BaseUnitError</name>
+        <label>基本単位エラー</label>
+        <locationX>578</locationX>
+        <locationY>395</locationY>
+        <customErrorMessages>
+            <errorMessage>商品マスタの「基本単位」が未設定のため、この商品を注文明細に追加できません。</errorMessage>
+            <fieldSelection>ProductMaster__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>UnitError</name>
+        <label>単位エラー</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <customErrorMessages>
+            <errorMessage>入力された「単位」が商品マスタの「基本単位」よりも小さいため、利用できません。</errorMessage>
+            <fieldSelection>Unit__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>CheckBaseUnit</name>
+        <label>基本単位チェック</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>BaseUnitError</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>デフォルトの結果</defaultConnectorLabel>
+        <rules>
+            <name>HasBaseUnit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ProductMaster__r.StandardUnit__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CompareUnit</targetReference>
+            </connector>
+            <label>基本単位がある</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>注文明細の単位が商品の基本単位 より 大きい場合、エラーにする</description>
+        <name>CompareUnit</name>
+        <label>単位を比べる</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>ConvertQuantity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>デフォルトの結果</defaultConnectorLabel>
+        <rules>
+            <name>DetailUnitLarger</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CompareFlag</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UnitError</targetReference>
+            </connector>
+            <label>明細の単位之方が小さい</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>CompareFlag</name>
+        <dataType>Boolean</dataType>
+        <expression>1/{!DetailBaseQuantity} &lt; 1/{!ProductBaseQuantity}</expression>
+    </formulas>
+    <formulas>
+        <name>ConvertedQuantity</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Quantity__c} / BLANKVALUE({!DetailBaseQuantity}, 1) * BLANKVALUE({!ProductBaseQuantity}, 1)</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <name>DetailBaseQuantity</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+    TEXT({!$Record.Unit__c}), 
+    &quot;Pallet&quot;, {!$Record.ProductMaster__r.PalletLoadsNumber__c}, 
+    &quot;Piece&quot;, {!$Record.ProductMaster__r.CaseItemQuantity__c},
+    &quot;Kg&quot;, {!$Record.ProductMaster__r.CaseKg__c},
+    &quot;Case&quot;, 1,
+    NULL
+)</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <name>ProductBaseQuantity</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+    TEXT({!$Record.ProductMaster__r.StandardUnit__c}), 
+    &quot;Pallet&quot;, {!$Record.ProductMaster__r.PalletLoadsNumber__c}, 
+    &quot;Piece&quot;, {!$Record.ProductMaster__r.CaseItemQuantity__c},
+    &quot;Kg&quot;, {!$Record.ProductMaster__r.CaseKg__c},
+    &quot;Case&quot;, 1,
+    NULL
+)</expression>
+        <scale>4</scale>
+    </formulas>
+    <interviewLabel>注文明細の数量換算 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>注文明細の数量換算</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CheckBaseUnit</targetReference>
+        </connector>
+        <filterFormula>AND(
+    NOT(ISBLANK(TEXT({!$Record.Unit__c}))),
+    NOT(ISBLANK({!$Record.Quantity__c})),
+    OR(
+        ISNEW(),
+        ISCHANGED({!$Record.Unit__c}),
+        ISCHANGED({!$Record.Quantity__c})
+    ),
+{!$Record.ProductMaster__c} != null
+)</filterFormula>
+        <object>OrderDetail__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

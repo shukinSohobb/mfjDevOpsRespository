@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DispatchListCreateDelayFlag_F__c</fullName>
+    <formula>IF(
+  /*配車完了と配車完了以降の状態：falseを返す*/
+  OR(
+    ISPICKVAL(Status__c, &quot;DispatchCompleted&quot;),
+    ISPICKVAL(Status__c, &quot;DeliveryCompleted&quot;),
+    ISPICKVAL(Status__c, &quot;Cancel&quot;),
+    ISPICKVAL(Status__c, &quot;InvoiceConfirmed&quot;)
+  ),
+  false,
+  NOT(
+    ISBLANK(TEXT(TransportationMode__c)) ||
+    ISBLANK(LoadingDate__c) ||
+    ISBLANK(DispatchDetail_Cnt__c)
+  )
+  &amp;&amp;
+  ISPICKVAL(TransportationMode__c, &quot;Charter&quot;)
+  &amp;&amp;
+  (
+    (
+      (
+        ISBLANK(ShippingCompany__c) ||
+        NOT(ISPICKVAL(ShippingCompany__r.Type, &quot;Subcontractor&quot;))
+      )
+      &amp;&amp;
+      (
+        ISBLANK(DriverMaster__c) ||
+        ISBLANK(VehicleNumber__c)
+      )
+    )
+    ||
+    (
+      NOT(ISBLANK(ShippingCompany__c)) &amp;&amp;
+      ISPICKVAL(ShippingCompany__r.Type, &quot;Subcontractor&quot;)
+    )
+  )
+  &amp;&amp;
+  NOW() &gt; DATETIMEVALUE(TEXT(LoadingDate__c - 1) &amp; &quot; 3:00:00&quot;)
+  &amp;&amp;
+  DispatchDetail_Cnt__c &gt; 0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>配車組み遅延フラグ</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

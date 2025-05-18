@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RequireSubcontractBillingDate</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+NOT(ISPICKVAL(Status__c, &quot;Reception&quot;))
+&amp;&amp;
+NOT(ISBLANK(ShippingCompany__c))
+&amp;&amp;
+/* 判定項目 */
+ISBLANK(SubcontractBillingDate__c)</errorConditionFormula>
+    <errorDisplayField>SubcontractBillingDate__c</errorDisplayField>
+    <errorMessage>「下請け請求日」を入力してください。</errorMessage>
+</ValidationRule>

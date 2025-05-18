@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>注文の請求・支払明細自動作成 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>注文の請求・支払明細自動作成</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AccountingDetailAutoCreateForOrderSubFlow</targetReference>
+        </connector>
+        <filterFormula>/* ISNEW() || 受付 から 受付確認済み に変更 */
+/* &amp;&amp; NOT 出庫のみ */
+(ISNEW() || ISPICKVAL( {!$Record__Prior.Status__c}, &quot;Reception&quot; ))
+&amp;&amp; ISPICKVAL( {!$Record.Status__c}, &quot;ReceptionCompleted&quot; )
+&amp;&amp; NOT(ISPICKVAL( {!$Record.TransportationMode__c}, &quot;ShippingOnly&quot; ))</filterFormula>
+        <object>OrderHeader__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AccountingDetailAutoCreateForOrderSubFlow</name>
+        <label>注文の請求・支払明細自動作成サブフロー</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <flowName>AccountingDetailAutoCreateForOrderSubFlow</flowName>
+        <inputAssignments>
+            <name>OrderRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <triggerOrder>500</triggerOrder>
+    <variables>
+        <name>accountingDetailList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AccountingDetail__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_filterAccountingDetailList</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AccountingDetail__c</objectType>
+    </variables>
+    <variables>
+        <name>invoiceItemList</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>paymentItemList</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

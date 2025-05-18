@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distance_F__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    /* 条件 */
+    AND(
+        NOT(ISBLANK(OriginPlace__c)),
+        NOT(ISBLANK(OriginPlace__r.Latitude__c)),
+        NOT(ISBLANK(OriginPlace__r.Longitude__c)),
+        NOT(ISBLANK(Destination__c)),
+        NOT(ISBLANK(Destination__r.Latitude__c)),
+        NOT(ISBLANK(Destination__r.Longitude__c))
+    ),
+    /* 距離計算 */
+    DISTANCE(
+        GEOLOCATION(OriginPlace__r.Latitude__c, OriginPlace__r.Longitude__c), 
+        GEOLOCATION(Destination__r.Latitude__c, Destination__r.Longitude__c), 
+        &apos;km&apos;
+    ),
+    NULL
+)
+/* 空白項目を空白として処理 */</formula>
+    <label>距離</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

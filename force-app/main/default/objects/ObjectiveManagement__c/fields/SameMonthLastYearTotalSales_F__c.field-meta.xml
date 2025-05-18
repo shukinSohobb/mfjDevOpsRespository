@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SameMonthLastYearTotalSales_F__c</fullName>
+    <formula>IF (  ISBLANK(ObjectiveManagement__c)  ,  SameMonthLastYearTotalSales__c ,  ObjectiveManagement__r.TotalSales_Sum__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>前年同月実績</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

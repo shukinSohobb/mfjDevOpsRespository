@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 路線便受付遅延フラグ --></label>
+    <name>RouteDeliveryDelayFlag_F__c</name>
+</CustomFieldTranslation>

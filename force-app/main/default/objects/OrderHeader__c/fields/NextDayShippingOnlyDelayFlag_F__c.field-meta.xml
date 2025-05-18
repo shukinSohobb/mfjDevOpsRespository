@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NextDayShippingOnlyDelayFlag_F__c</fullName>
+    <formula>NOT(
+    ISBLANK(TEXT(TransportationMode__c))
+    ||
+    ISBLANK(TEXT(Status__c))
+    ||
+    ISBLANK(LoadingDate__c)
+)
+&amp;&amp;
+ISPICKVAL(TransportationMode__c, &quot;ShippingOnly&quot;)
+&amp;&amp;
+ISPICKVAL(Status__c, &quot;Reception&quot;)
+&amp;&amp;
+NOW() &gt; DATETIMEVALUE(TEXT(LoadingDate__c -1) &amp; &quot; 6:00:00&quot;) /* 6:00:00Z のGMT　= 15時JST */</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>翌日出荷受付（倉庫）遅延フラグ</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

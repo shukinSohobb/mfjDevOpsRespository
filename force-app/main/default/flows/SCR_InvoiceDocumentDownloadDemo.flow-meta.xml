@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>action_InvoiceDocumentDownloadDemo</name>
+        <label>請求書をダウンロード</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>c:InvoiceDocumentDownloadDemo</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>c:InvoiceDocumentDownloadDemo</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>請求書ダウンロードのデモを実行するフローです。</description>
+    <environments>Default</environments>
+    <interviewLabel>請求書ダウンロード {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>請求書ダウンロードデモ</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>action_InvoiceDocumentDownloadDemo</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

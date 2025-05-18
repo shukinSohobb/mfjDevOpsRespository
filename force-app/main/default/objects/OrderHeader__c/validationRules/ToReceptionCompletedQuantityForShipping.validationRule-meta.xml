@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ToReceptionCompletedQuantityForShipping</fullName>
+    <active>true</active>
+    <description>受付確認済 に変更した時、「運賃計算用数量」設定してない場合</description>
+    <errorConditionFormula>/* 判定条件 */
+(ISNEW() || ISPICKVAL( PRIORVALUE( Status__c ), &quot;Reception&quot;))
+&amp;&amp; ISPICKVAL( Status__c , &quot;ReceptionCompleted&quot;)
+&amp;&amp; NOT(ISPICKVAL(TransportationMode__c, &quot;ShippingOnly&quot;))
+&amp;&amp;
+/* 判定項目 */
+ISBLANK(QuantityForShippingFeeCal__c)</errorConditionFormula>
+    <errorDisplayField>QuantityForShippingFeeCal__c</errorDisplayField>
+    <errorMessage>「運賃計算用数量」を入力してください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 積数端数　処理桁数 --></label>
+    <name>AccumulatedDecimalProcessDigitNumber__c</name>
+    <picklistValues>
+        <masterLabel>0：端数無し</masterLabel>
+        <translation><!-- 0：端数無し --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>１：</masterLabel>
+        <translation><!-- １： --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

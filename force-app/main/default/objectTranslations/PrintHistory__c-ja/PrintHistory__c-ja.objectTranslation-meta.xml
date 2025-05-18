@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>印刷履歴</value>
+    </caseValues>
+    <layouts>
+        <layout>印刷履歴レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- 帳票出力 --></label>
+        <name>DocumentExport</name>
+    </quickActions>
+    <webLinks>
+        <label><!-- SVFLEXPrintHistorycButton20250502081339506oeY --></label>
+        <name>SVFLEXPrintHistorycButton20250502081339506oeY</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFLEXPrintHistorycButton20250507081314212whn --></label>
+        <name>SVFLEXPrintHistorycButton20250507081314212whn</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFLEXPrintHistorycListButton20250502081339506oeY --></label>
+        <name>SVFLEXPrintHistorycListButton20250502081339506oeY</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFLEXPrintHistorycListButton20250507081314212whn --></label>
+        <name>SVFLEXPrintHistorycListButton20250507081314212whn</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFPrintHistorycButton20250502081339506oeY --></label>
+        <name>SVFPrintHistorycButton20250502081339506oeY</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFPrintHistorycButton20250507081314212whn --></label>
+        <name>SVFPrintHistorycButton20250507081314212whn</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFPrintHistorycListButton20250502081339506oeY --></label>
+        <name>SVFPrintHistorycListButton20250502081339506oeY</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFPrintHistorycListButton20250507081314212whn --></label>
+        <name>SVFPrintHistorycListButton20250507081314212whn</name>
+    </webLinks>
+</CustomObjectTranslation>

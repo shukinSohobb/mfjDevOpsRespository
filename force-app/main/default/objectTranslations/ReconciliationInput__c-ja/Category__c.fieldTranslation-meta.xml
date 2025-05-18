@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 区分 --></label>
+    <name>Category__c</name>
+    <picklistValues>
+        <masterLabel>01:現金</masterLabel>
+        <translation><!-- 01:現金 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>02:振込</masterLabel>
+        <translation><!-- 02:振込 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>03:手数料</masterLabel>
+        <translation><!-- 03:手数料 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>04:受取手形</masterLabel>
+        <translation><!-- 04:受取手形 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>05:小切手</masterLabel>
+        <translation><!-- 05:小切手 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>06:相殺</masterLabel>
+        <translation><!-- 06:相殺 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>07:入金時值引</masterLabel>
+        <translation><!-- 07:入金時值引 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>08:その他</masterLabel>
+        <translation><!-- 08:その他 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

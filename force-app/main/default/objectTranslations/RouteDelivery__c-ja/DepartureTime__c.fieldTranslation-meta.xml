@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 出発時間帯 --></label>
+    <name>DepartureTime__c</name>
+    <picklistValues>
+        <masterLabel>午前</masterLabel>
+        <translation><!-- 午前 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>午後</masterLabel>
+        <translation><!-- 午後 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

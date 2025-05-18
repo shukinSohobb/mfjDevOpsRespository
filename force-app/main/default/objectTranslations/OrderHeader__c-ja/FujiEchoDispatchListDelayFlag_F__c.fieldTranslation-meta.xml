@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 富士エコーの配車組み確定遅延フラグ --></label>
+    <name>FujiEchoDispatchListDelayFlag_F__c</name>
+</CustomFieldTranslation>

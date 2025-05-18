@@ -1,0 +1,12 @@
+<template>
+    <div style="height: 15px;    top: 0px;
+    position: absolute;
+    left: 0px;">
+        <img if:true={over7} src={rennzokuicon} style="height:15px;"/>
+        <img if:true={over15} src={jikannijyou} style="height:15px;"/>
+        <img if:true={resterror} src={kyuukeiicon} style="height:15px;"/>
+    </div>
+    <div style={overstyle}>
+        <lightning-formatted-rich-text value={showvalue}></lightning-formatted-rich-text>
+    </div>
+</template>

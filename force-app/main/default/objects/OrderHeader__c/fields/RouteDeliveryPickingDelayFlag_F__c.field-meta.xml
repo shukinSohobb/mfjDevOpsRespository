@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RouteDeliveryPickingDelayFlag_F__c</fullName>
+    <formula>NOT(
+    ISBLANK(TEXT(TransportationMode__c))
+    ||
+    ISBLANK(LoadingDate__c)
+    ||
+    ISBLANK(OrderDetail_Cnt__c)
+)
+&amp;&amp;
+ISPICKVAL(TransportationMode__c, &quot;Route&quot;)
+&amp;&amp;
+NOW() &gt; DATETIMEVALUE(TEXT(LoadingDate__c) &amp; &quot; 4:00:00&quot;) /* 4:00:00Z のGMT　= 13時JST */
+&amp;&amp;
+(
+    ISBLANK(PickingedQuantity_Sum__c)
+    ||
+    OrderDetailQuantity_Sum__c &lt;&gt; PickingedQuantity_Sum__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>路線便ピッキングリスト遅延フラグ</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 在庫情報 --></label>
+    <lookupFilter>
+        <errorMessage><!-- 商品名が一致していません。 --></errorMessage>
+    </lookupFilter>
+    <name>ProductStockInfo__c</name>
+    <relationshipLabel><!-- ピッキングリスト --></relationshipLabel>
+</CustomFieldTranslation>

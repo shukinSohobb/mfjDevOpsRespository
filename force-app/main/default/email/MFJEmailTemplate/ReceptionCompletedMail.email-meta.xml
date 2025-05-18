@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>荷主へ：注文の受付確認済のメール</name>
+    <style>none</style>
+    <subject>マルエスからの連絡：注文#{!OrderHeader__c.Name}の金額確定しました</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

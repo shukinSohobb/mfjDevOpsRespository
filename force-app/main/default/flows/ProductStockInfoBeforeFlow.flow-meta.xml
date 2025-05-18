@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Before_SetValue1</name>
+        <label>Before_SetValue1</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Account_F</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ProductReference__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ProductMaster__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Before_SetValue2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Before_SetValue2</name>
+        <label>Before_SetValue2</label>
+        <locationX>176</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StatusValue_F</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <description>商品マスタの荷主</description>
+        <name>Account_F</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.ProductMaster__r.Account__c}</expression>
+    </formulas>
+    <formulas>
+        <name>ProductStockAdjustQuantity_F</name>
+        <dataType>Number</dataType>
+        <expression>IF (ISPICKVAL({!$Record.Status__c}, &quot;PreRegistration&quot;), {!$Record.ProductStockAdjustQuantity__c}+ {!$Record.ArrivalQuantity__c}, {!$Record.ArrivalQuantity__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>StatusValue_F</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    OR(
+        ISCHANGED({!$Record.ArrivalDate__c}),
+        ISCHANGED({!$Record.ArrivalQuantity__c})
+    )
+    &amp;&amp; ISBLANK(TEXT({!$Record.Status__c}))
+    &amp;&amp; NOT(ISNULL({!$Record.ArrivalDate__c}))
+    &amp;&amp; {!$Record.ArrivalDate__c} &lt;= {!$Flow.CurrentDate}
+    &amp;&amp; {!$Record.ArrivalQuantity__c} &gt; 0,
+    &quot;Arrived&quot;,
+    TEXT({!$Record.Status__c})
+)</expression>
+    </formulas>
+    <interviewLabel>在庫情報の高速フロー {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>在庫情報の高速フロー</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Before_SetValue1</targetReference>
+        </connector>
+        <object>ProductStockInfo__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

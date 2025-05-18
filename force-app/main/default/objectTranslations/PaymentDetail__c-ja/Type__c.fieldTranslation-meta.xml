@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- タイプ --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>売掛</masterLabel>
+        <translation><!-- 売掛 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>買掛</masterLabel>
+        <translation><!-- 買掛 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 状態 --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>処理済み</masterLabel>
+        <translation><!-- 処理済み --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>確認中</masterLabel>
+        <translation><!-- 確認中 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

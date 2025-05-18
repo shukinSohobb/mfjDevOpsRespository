@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ItemName_F__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    /* 注文が存在する場合：注文の「1件目商品名」を設定 */
+    AND(NOT(ISBLANK(OrderHeader__c)), NOT(ISBLANK(OrderHeader__r.FirstProductName__c))),
+    OrderHeader__r.FirstProductName__c,
+    IF(
+	       /* 商品マスタが存在する場合：商品マスタの「商品マスタ名」を設定 */
+        AND(NOT(ISBLANK(ProductMaster__c)), NOT(ISBLANK(ProductMaster__r.Name))),
+        ProductMaster__r.Name,
+        IF(
+			         /* 売掛買掛明細が存在、且つ「手入力品名」が空ではない場合：「手入力品名」を設定 */
+            AND(NOT(ISBLANK(ReceivablePayableDetail__c)), NOT(ISBLANK(ReceivablePayableDetail__r.ItemNameManual__c))),
+            ReceivablePayableDetail__r.ItemNameManual__c,
+            IF(
+			            	/* 売掛買掛明細が存在、且つ「手入力品名」が空の場合：「項目」を設定 */
+                AND(NOT(ISBLANK(ReceivablePayableDetail__c)), ISBLANK(ReceivablePayableDetail__r.ItemNameManual__c)),
+                TEXT(ReceivablePayableDetail__r.Item__c),
+                &quot;&quot;
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>品名</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

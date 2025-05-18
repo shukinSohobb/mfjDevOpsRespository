@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ToReceptionCompletedTransportationMode</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+(ISNEW() || ISPICKVAL( PRIORVALUE( Status__c ), &quot;Reception&quot;))
+&amp;&amp; ISPICKVAL( Status__c , &quot;ReceptionCompleted&quot;)
+&amp;&amp;
+/* 判定項目 */
+Destination__r.RouteDeliveryDeny__c  = true
+&amp;&amp; ISPICKVAL( TransportationMode__c , &quot;Route&quot;)</errorConditionFormula>
+    <errorDisplayField>TransportationMode__c</errorDisplayField>
+    <errorMessage>「着地」が路線便不可になっています。</errorMessage>
+</ValidationRule>

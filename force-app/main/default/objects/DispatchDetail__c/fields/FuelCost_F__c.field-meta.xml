@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FuelCost_F__c</fullName>
+    <formula>IF(
+    /* 条件 */
+    AND(
+        NOT(ISBLANK(OrderHeader__r.Distance_F__c)),
+        NOT(ISBLANK(OrderHeader__r.GasolinePriceMaster__c)),
+        NOT(ISBLANK(OrderHeader__r.GasolinePriceMaster__r.Price__c)),
+        NOT(ISBLANK(VehicleMaster__c)),
+        NOT(ISBLANK(VehicleMaster__r.FuelEfficiency__c))
+    ),
+    OrderHeader__r.Distance_F__c/* km */
+    / 
+    VehicleMaster__r.FuelEfficiency__c /* km/L */
+    *
+    OrderHeader__r.GasolinePriceMaster__r.Price__c /* ￥/L */
+    ,
+    NULL
+)</formula>
+    <label>燃料費</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

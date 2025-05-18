@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>raysheetPage</name>
+                    <value>a0KH4000000SV4hMAG</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>配車車両</value>
+                </componentInstanceProperties>
+                <componentName>gcss:raysheetpageLwc</componentName>
+                <identifier>gcss_raysheetpageLwc</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>配車車両</masterLabel>
+    <template>
+        <name>Main_Region_with_Custom_CSS</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

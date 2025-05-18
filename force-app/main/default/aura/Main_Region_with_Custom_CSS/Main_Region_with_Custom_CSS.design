@@ -1,0 +1,5 @@
+<design:component label="Main Region with Custom CSS">
+  <flexipage:template>
+    <flexipage:region name="main" label="Main Region" defaultWidth="Large"> </flexipage:region>
+  </flexipage:template>
+</design:component>

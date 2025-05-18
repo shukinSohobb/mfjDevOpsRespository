@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__Tab</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <property name="widthpx"    type="Integer"  label="固定幅px"/>
+            <property name="heightpx"    type="Integer"  label="固定Head高px"/>
+            <property name="heightpx2"    type="Integer"  label="固定表示高px"/>
+            <property name="kyuukeiicon"    type="String"  label="休憩アイコンURL"/>
+            <property name="rennzokuicon"    type="String"  label="連続勤務アイコンURL"/>
+            <property name="jikannijyou"    type="String"  label="拘束アイコンURL"/>
+            <property name="yuukyuucolor"    type="String"  label="有給背景色"/>
+            <property name="teikyuucolor"    type="String"  label="定休背景色"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

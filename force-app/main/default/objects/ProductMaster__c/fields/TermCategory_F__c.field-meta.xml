@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TermCategory_F__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Account__r.TermCategory__c
+  , &quot;2terms&quot;, &quot;２期制&quot;
+  , &quot;3terms&quot;, &quot;３期制&quot;
+  , Text(Account__r.TermCategory__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>期制区分</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

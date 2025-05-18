@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RequireShippingCompanyForRoute</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+ISPICKVAL(TransportationMode__c, &apos;Route&apos;)
+&amp;&amp;
+OR(
+ISPICKVAL(Status__c, &apos;ReceptionCompleted&apos;),
+ISPICKVAL(Status__c, &apos;InvoiceConfirmed&apos;),
+ISPICKVAL(Status__c, &apos;DeliveryCompleted&apos;),
+ISPICKVAL(Status__c, &apos;DispatchCompleted&apos;)
+)
+&amp;&amp; 
+/* 判定項目 */
+ISBLANK(ShippingCompany__c)</errorConditionFormula>
+    <errorDisplayField>ShippingCompany__c</errorDisplayField>
+    <errorMessage>「路線便」の注文については、「受注確認済」または以降の状態に変更する前に、必ず配送会社を設定してください。</errorMessage>
+</ValidationRule>

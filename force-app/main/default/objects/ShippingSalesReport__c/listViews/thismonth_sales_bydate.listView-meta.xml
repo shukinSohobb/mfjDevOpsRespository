@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>thismonth_sales_bydate</fullName>
+    <columns>NAME</columns>
+    <columns>Date2__c</columns>
+    <columns>GeneralSales_F__c</columns>
+    <columns>GeneralSalesSubcontractorSales_F__c</columns>
+    <columns>ChateraiseSales__c</columns>
+    <columns>ChateraiseSubcontractorSales__c</columns>
+    <columns>FujiEchoCharteredVehicleSales__c</columns>
+    <columns>FujiEchoCharteredVehicleSubcontractSales__c</columns>
+    <columns>ObjectiveManagement__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <label>今月の運送売上実績表一覧</label>
+</ListView>

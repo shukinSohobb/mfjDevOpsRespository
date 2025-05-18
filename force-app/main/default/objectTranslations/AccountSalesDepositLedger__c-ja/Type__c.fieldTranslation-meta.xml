@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 区分 --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>受入</masterLabel>
+        <translation><!-- 受入 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>売上</masterLabel>
+        <translation><!-- 売上 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>月計</masterLabel>
+        <translation><!-- 月計 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

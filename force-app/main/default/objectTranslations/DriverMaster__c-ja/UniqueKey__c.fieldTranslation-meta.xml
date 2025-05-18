@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- TRAFFICS2番号を入力して下さい --></help>
+    <label><!-- TRAFFICS2番号 --></label>
+    <name>UniqueKey__c</name>
+</CustomFieldTranslation>

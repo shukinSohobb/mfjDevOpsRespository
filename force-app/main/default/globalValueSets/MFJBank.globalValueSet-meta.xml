@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>BillingTransferBank_1</fullName>
+        <default>true</default>
+        <label>山梨中央銀行　富士見支店</label>
+    </customValue>
+    <customValue>
+        <fullName>BillingTransferBank_2</fullName>
+        <default>false</default>
+        <label>みずほ銀行 甲府支店</label>
+    </customValue>
+    <customValue>
+        <fullName>BillingTransferBank_3</fullName>
+        <default>false</default>
+        <label>りそな銀行 甲府支店</label>
+    </customValue>
+    <customValue>
+        <fullName>BillingTransferBank_4</fullName>
+        <default>false</default>
+        <label>商工中金 甲府支店</label>
+    </customValue>
+    <customValue>
+        <fullName>BillingTransferBank_5</fullName>
+        <default>false</default>
+        <label>甲府信用金庫 玉穂支店</label>
+    </customValue>
+    <customValue>
+        <fullName>BillingTransferBank_6</fullName>
+        <default>false</default>
+        <label>三井住友銀行 甲府支店</label>
+    </customValue>
+    <description>マルエス利用する銀行口座</description>
+    <masterLabel>銀行口座</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 車両 --></label>
+    <name>Vehicle__c</name>
+    <picklistValues>
+        <masterLabel>4t保冷車</masterLabel>
+        <translation><!-- 4t保冷車 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>トレーラードライ車</masterLabel>
+        <translation><!-- トレーラードライ車 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>トレーラー保冷車</masterLabel>
+        <translation><!-- トレーラー保冷車 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>大型ドライ車</masterLabel>
+        <translation><!-- 大型ドライ車 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>大型保冷車</masterLabel>
+        <translation><!-- 大型保冷車 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

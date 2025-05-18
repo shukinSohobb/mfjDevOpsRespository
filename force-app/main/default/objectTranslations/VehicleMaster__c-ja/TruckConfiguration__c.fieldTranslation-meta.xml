@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 車型 --></label>
+    <name>TruckConfiguration__c</name>
+    <picklistValues>
+        <masterLabel>ウイング（低床）</masterLabel>
+        <translation><!-- ウイング（低床） --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ウイング（高床）</masterLabel>
+        <translation><!-- ウイング（高床） --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>冷凍ウイング</masterLabel>
+        <translation><!-- 冷凍ウイング --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>箱車</masterLabel>
+        <translation><!-- 箱車 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

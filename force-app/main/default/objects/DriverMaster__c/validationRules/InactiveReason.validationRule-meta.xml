@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InactiveReason</fullName>
+    <active>true</active>
+    <description>無効にしたと時、「無効理由」必ず入力する必要があります</description>
+    <errorConditionFormula>Inactive__c &amp;&amp;
+ISBLANK(InactiveReason__c)</errorConditionFormula>
+    <errorDisplayField>InactiveReason__c</errorDisplayField>
+    <errorMessage>無効にした時、「無効理由」を必ず入力する必要があります。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>マスタ</label>
+    <navType>Standard</navType>
+    <tabs>standard-Contact</tabs>
+    <tabs>ObjectiveManagement__c</tabs>
+    <tabs>OriginDestination__c</tabs>
+    <tabs>DeliverySystem__c</tabs>
+    <tabs>PriceTable__c</tabs>
+    <tabs>ShippingFee__c</tabs>
+    <tabs>StorageFee__c</tabs>
+    <tabs>RegularServiceInformation__c</tabs>
+    <tabs>ProductMaster__c</tabs>
+    <tabs>VehicleMaster__c</tabs>
+    <tabs>DriverMaster__c</tabs>
+    <tabs>WarehouseMaster__c</tabs>
+    <tabs>RaySheet_GasolinePriceMaster</tabs>
+    <tabs>RaySheet_ObjectiveManagement</tabs>
+    <tabs>RaySheet_OrderMaximumLimit</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>UtilityBar4</utilityBar>
+</CustomApplication>

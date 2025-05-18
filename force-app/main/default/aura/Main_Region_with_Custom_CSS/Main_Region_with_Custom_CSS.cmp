@@ -1,0 +1,10 @@
+<aura:component implements="lightning:appHomeTemplate" access="global" description="Only main space without header">
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:attribute name="main" type="Aura.Component[]" />
+  <ltng:require styles="{!$Resource.NoHeader}"></ltng:require>
+  <div>
+    <lightning:layout>
+      <lightning:layoutItem flexibility="grow"> {!v.main} </lightning:layoutItem>
+    </lightning:layout>
+  </div>
+</aura:component>

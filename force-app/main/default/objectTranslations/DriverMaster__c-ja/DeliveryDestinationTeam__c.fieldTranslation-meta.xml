@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 所属 --></label>
+    <name>DeliveryDestinationTeam__c</name>
+    <picklistValues>
+        <masterLabel>シャトレーゼTR</masterLabel>
+        <translation><!-- シャトレーゼTR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>シャトレーゼ大型</masterLabel>
+        <translation><!-- シャトレーゼ大型 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>スターバックス</masterLabel>
+        <translation><!-- スターバックス --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>マック</masterLabel>
+        <translation><!-- マック --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ローソン</masterLabel>
+        <translation><!-- ローソン --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>一般TR</masterLabel>
+        <translation><!-- 一般TR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>一般大型</masterLabel>
+        <translation><!-- 一般大型 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>事務</masterLabel>
+        <translation><!-- 事務 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>倉庫</masterLabel>
+        <translation><!-- 倉庫 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

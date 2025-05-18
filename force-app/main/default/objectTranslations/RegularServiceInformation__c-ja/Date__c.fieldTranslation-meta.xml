@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 毎月 --></label>
+    <name>Date__c</name>
+    <picklistValues>
+        <masterLabel>01日</masterLabel>
+        <translation><!-- 01日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>02日</masterLabel>
+        <translation><!-- 02日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>03日</masterLabel>
+        <translation><!-- 03日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>04日</masterLabel>
+        <translation><!-- 04日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>05日</masterLabel>
+        <translation><!-- 05日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>06日</masterLabel>
+        <translation><!-- 06日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>07日</masterLabel>
+        <translation><!-- 07日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>08日</masterLabel>
+        <translation><!-- 08日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>09日</masterLabel>
+        <translation><!-- 09日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>10日</masterLabel>
+        <translation><!-- 10日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>11日</masterLabel>
+        <translation><!-- 11日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>12日</masterLabel>
+        <translation><!-- 12日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>13日</masterLabel>
+        <translation><!-- 13日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>14日</masterLabel>
+        <translation><!-- 14日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>15日</masterLabel>
+        <translation><!-- 15日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>16日</masterLabel>
+        <translation><!-- 16日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>17日</masterLabel>
+        <translation><!-- 17日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>18日</masterLabel>
+        <translation><!-- 18日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>19日</masterLabel>
+        <translation><!-- 19日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>20日</masterLabel>
+        <translation><!-- 20日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>21日</masterLabel>
+        <translation><!-- 21日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>22日</masterLabel>
+        <translation><!-- 22日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>23日</masterLabel>
+        <translation><!-- 23日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>24日</masterLabel>
+        <translation><!-- 24日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>25日</masterLabel>
+        <translation><!-- 25日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>26日</masterLabel>
+        <translation><!-- 26日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>27日</masterLabel>
+        <translation><!-- 27日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>28日</masterLabel>
+        <translation><!-- 28日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>29日</masterLabel>
+        <translation><!-- 29日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>30日</masterLabel>
+        <translation><!-- 30日 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>月末</masterLabel>
+        <translation><!-- 月末 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

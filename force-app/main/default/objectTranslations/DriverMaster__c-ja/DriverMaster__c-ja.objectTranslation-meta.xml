@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ドライバーマスタ</value>
+    </caseValues>
+    <layouts>
+        <layout>ドライバーマスタレイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- シフト情報 --></label>
+            <section>シフト情報</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- 無効にした時、「無効理由」を必ず入力する必要があります。 --></errorMessage>
+        <name>InactiveReason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「定休日適用開始日」を7日以降かつ、60日以内の日付に設定してください。 --></errorMessage>
+        <name>WeeklyOffStartDateSet</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 送信先の課 --></label>
+    <name>ToEmailGroupAddresses__c</name>
+    <picklistValues>
+        <masterLabel>システム課</masterLabel>
+        <translation><!-- システム課 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>倉庫課</masterLabel>
+        <translation><!-- 倉庫課 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>受注課</masterLabel>
+        <translation><!-- 受注課 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>経理課</masterLabel>
+        <translation><!-- 経理課 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>配車課</masterLabel>
+        <translation><!-- 配車課 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

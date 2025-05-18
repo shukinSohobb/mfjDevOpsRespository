@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 直近で帳票ボタンを押下した日付が自動入力されます --></help>
+    <label><!-- 発行日 --></label>
+    <name>PrintDate__c</name>
+</CustomFieldTranslation>

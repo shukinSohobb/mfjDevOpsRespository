@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>一括処理ログ</value>
+    </caseValues>
+    <layouts>
+        <layout>一括処理ログレイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 詳細情報 --></label>
+            <section>詳細情報</section>
+        </sections>
+        <sections>
+            <label><!-- 関連レコード --></label>
+            <section>関連レコード</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

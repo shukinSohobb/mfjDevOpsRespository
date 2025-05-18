@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllocationPriority__c</fullName>
+    <label>引き当て順位</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ExpirationDate</fullName>
+                <default>true</default>
+                <label>賞味期限</label>
+            </value>
+            <value>
+                <fullName>ManufactureDate</fullName>
+                <default>false</default>
+                <label>製造日</label>
+            </value>
+            <value>
+                <fullName>ArrivalDate</fullName>
+                <default>false</default>
+                <label>入庫日</label>
+            </value>
+            <value>
+                <fullName>LotNumber</fullName>
+                <default>false</default>
+                <label>ロット番号</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

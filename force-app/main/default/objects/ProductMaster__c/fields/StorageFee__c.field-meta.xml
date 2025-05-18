@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StorageFee__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>保管料</label>
+    <referenceTo>StorageFee__c</referenceTo>
+    <relationshipLabel>商品マスタ</relationshipLabel>
+    <relationshipName>ProductMasterList</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

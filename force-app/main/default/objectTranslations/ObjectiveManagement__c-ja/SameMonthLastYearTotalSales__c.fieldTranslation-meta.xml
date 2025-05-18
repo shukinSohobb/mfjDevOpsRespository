@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 前年同月実績（移行） --></label>
+    <name>SameMonthLastYearTotalSales__c</name>
+</CustomFieldTranslation>

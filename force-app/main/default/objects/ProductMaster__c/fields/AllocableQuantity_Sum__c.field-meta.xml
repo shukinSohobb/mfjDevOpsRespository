@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllocableQuantity_Sum__c</fullName>
+    <label>引き当て可能数</label>
+    <summarizedField>ProductStockInfo__c.AllocableQuantity_F__c</summarizedField>
+    <summaryForeignKey>ProductStockInfo__c.ProductMaster__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

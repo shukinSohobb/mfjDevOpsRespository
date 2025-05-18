@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrderHeader__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>注文</label>
+    <referenceTo>OrderHeader__c</referenceTo>
+    <relationshipLabel>一括処理ログ</relationshipLabel>
+    <relationshipName>BulkProcessLogList</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

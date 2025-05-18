@@ -1,0 +1,8 @@
+佐野副社長
+
+お疲れ様です。
+
+下記の請求書の承認が申請されました。ご確認ください。
+
+請求書名：{!InvoiceDocument__c.Name}
+請求書レコードのリンク：{!InvoiceDocument__c.Link}

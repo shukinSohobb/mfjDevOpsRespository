@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 支払の場合、小計（非課税）は調整しない、小計（税抜き）を上書きしたい場合、支払決定額（税抜き）を入力してください。 --></help>
+    <label><!-- 支払決定額（税抜き） --></label>
+    <name>PaymentDeterminedAmount__c</name>
+</CustomFieldTranslation>

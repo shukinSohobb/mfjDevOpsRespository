@@ -1,0 +1,135 @@
+<template>
+  <lightning-card>
+    <div style="padding: 10px">
+      <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+        <div class="slds-size_1-of-2" style="padding: 10px">
+          <lightning-input type="date" label="対象年月" onchange={changedate}></lightning-input>
+        </div>
+        <div class="slds-size_1-of-2" style="padding: 10px">
+          <lightning-combobox
+            if:true={industryOptions.data}
+            label="ドライバ所属"
+            options={_industryOptions}
+            value={inputDeliveryDestinationTeam}
+            onchange={handleChange}
+          ></lightning-combobox>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: right">
+      <lightning-button label="適用" title="適用" onclick={search} class="slds-m-left_x-small"></lightning-button>
+    </div>
+  </lightning-card>
+  <br />
+  <lightning-card>
+    <div style="margin: 10px; max-width: 100%; overflow: auto; max-height: 500px">
+      <table
+        class="slds-table slds-table_cell-buffer slds-table_bordered"
+        aria-labelledby="element-with-table-label other-element-with-table-label"
+        style={tableaucss}
+      >
+        <thead>
+          <tr class="slds-line-height_reset">
+            <template for:each={tabletr} for:item="tabletr2" for:index="index">
+              <th key={tabletr2.label} class={tabletr2.cssstr} scope="col" style={thcss}>
+                <div class="slds-truncate" title={tabletr2.label}>
+                  {tabletr2.dd}
+                  <br />
+                  {tabletr2.label}
+                </div>
+              </th>
+            </template>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={tablebody} for:item="tablebody2" for:index="index" if:true={workStatusOptions.data}>
+            <tr key={tablebody2.masterId} class="slds-hint-parent" style={thcss2}>
+              <th scope="row" class={tablebody2.cssstr}>
+                <div class="slds-truncate" title="Cloudhub">
+                  <a href="#" tabindex="-1" onclick={torecord} data-masterid={tablebody2.masterId}
+                    >{tablebody2.masterName}</a
+                  >
+                </div>
+              </th>
+
+              <template for:each={tabletr} for:item="tabletr2" for:index="index">
+                <td key={tabletr2.label} if:true={index}>
+                  <c-part_driver_schedule_td
+                    customdata={tablebody2.worksceduleMap}
+                    customdate={tabletr2.value}
+                    masterid={tablebody2.masterId}
+                    workstatusoptions={_workStatusOptions}
+                    yuukyuucolor={yuukyuucolor}
+                    teikyuucolor={teikyuucolor}
+                    onhaveopen={haveopen}
+                    nowkey={nowkey}
+                  ></c-part_driver_schedule_td>
+                </td>
+              </template>
+            </tr>
+          </template>
+          <!-- <tr class="slds-hint-parent">
+                    <th data-label="Opportunity Name" scope="row">
+                        <div class="slds-truncate" title="Cloudhub">
+                            <a href="#" tabindex="-1">Cloudhub</a>
+                        </div>
+                    </th>
+                    <td data-label="Account Name">
+                        <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    </td> -->
+
+          <!-- <template for:each={tabletr} for:item="tabletr2" for:index="index">
+                        <th key={tabletr2} class="" scope="col">
+                            <div class="slds-truncate" title={tabletr2}>{tabletr2}</div>
+                            </th>
+                    </template> -->
+          <!-- <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    </td>
+                    <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    </td>
+                    <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                    </td>
+                    <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                    </td>
+                    <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com">
+                        <a href="#" tabindex="-1">jrogers@cloudhub.com</a>
+                    </div>
+                    </td>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th data-label="Opportunity Name" scope="row">
+                    <div class="slds-truncate" title="Cloudhub + Anypoint Connectors">
+                        <a href="#" tabindex="-1">Cloudhub + Anypoint Connectors</a>
+                    </div>
+                    </th>
+                    <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    </td>
+                    <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    </td>
+                    <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    </td>
+                    <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                    </td>
+                    <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                    </td>
+                    <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com">
+                        <a href="#" tabindex="-1">jrogers@cloudhub.com</a>
+                    </div>
+                    </td> -->
+          <!-- </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </lightning-card>
+</template>

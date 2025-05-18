@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 一般(売上細目) --></label>
+    <name>GeneralSales_F__c</name>
+</CustomFieldTranslation>

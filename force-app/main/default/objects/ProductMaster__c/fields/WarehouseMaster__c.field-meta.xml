@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WarehouseMaster__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>値設定した場合、倉庫保管対象と見なす</description>
+    <label>倉庫</label>
+    <referenceTo>WarehouseMaster__c</referenceTo>
+    <relationshipLabel>商品マスタ</relationshipLabel>
+    <relationshipName>ProductMasterList</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

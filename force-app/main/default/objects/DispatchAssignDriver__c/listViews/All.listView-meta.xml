@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>DispatchDate_F__c</columns>
+    <columns>CourseName_F__c</columns>
+    <columns>DriverName_F__c</columns>
+    <columns>VehicleSerialNumber__c</columns>
+    <columns>Account_F__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>すべて選択</label>
+</ListView>

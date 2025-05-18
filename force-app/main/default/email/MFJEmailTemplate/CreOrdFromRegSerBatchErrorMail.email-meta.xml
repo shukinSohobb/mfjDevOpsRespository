@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>定期便注文作成バッチ実行エラー発生ので、メールにて連絡</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>内部：定期便注文作成バッチ実行エラー通知メール</name>
+    <style>none</style>
+    <subject>処理ログ：{!BulkProcessLog__c.Name}が作成されました</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ManufactureDate_Check</fullName>
+    <active>true</active>
+    <description>荷主の「引き当て順位：製造日」の場合、「製造日」の入力が必須になります。</description>
+    <errorConditionFormula>/*判断条件*/
+(AllocationPriority_F__c == &quot;ManufactureDate&quot;)
+&amp;&amp;
+/*判断結果*/
+ISBLANK(  ManufactureDate__c )</errorConditionFormula>
+    <errorDisplayField>ManufactureDate__c</errorDisplayField>
+    <errorMessage>「製造日」を入力してください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecurringStartAndEndDateCheck</fullName>
+    <active>true</active>
+    <description>開始日は終了日より前の日付である必要があります。</description>
+    <errorConditionFormula>RecurringStartDate__c &gt; RecurringEndDate__c</errorConditionFormula>
+    <errorDisplayField>RecurringStartDate__c</errorDisplayField>
+    <errorMessage>開始日は終了日より前の日付である必要があります。</errorMessage>
+</ValidationRule>

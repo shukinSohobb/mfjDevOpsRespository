@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
+            <property name="buttonwidthsize"    type="Integer"  label="行ボタン数"   default="2"/>
+            <property name="buttonheight" type="Integer" label="画像高さ" default="100"/>
+            <property name="innerstyle" type="String" label="ボタンスタイル" default=""/>
+            <property name="imageList"     type="String"  label="画像URL一覧" default="" description=";切り"/>
+            <property name="urlList"     type="String"  label="画像遷移先一覧" default="" description=";切り"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

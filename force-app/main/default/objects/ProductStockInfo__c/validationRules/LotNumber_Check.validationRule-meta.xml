@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LotNumber_Check</fullName>
+    <active>true</active>
+    <description>荷主の「引き当て順位：ロット番号」の場合、「生産ロット番号」の入力が必須になります。</description>
+    <errorConditionFormula>/*判断条件*/
+(AllocationPriority_F__c == &quot;LotNumber&quot;)
+&amp;&amp;
+/*判断結果*/
+ISBLANK( ProductionLotNumber__c)</errorConditionFormula>
+    <errorDisplayField>ProductionLotNumber__c</errorDisplayField>
+    <errorMessage>「生産ロット番号」を入力してください。</errorMessage>
+</ValidationRule>

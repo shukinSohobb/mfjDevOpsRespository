@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-2022-JP</encodingKey>
+    <name>請求書の承認申請通知</name>
+    <style>none</style>
+    <subject>請求書：{!InvoiceDocument__c.Name}の承認が申請されました。</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

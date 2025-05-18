@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrderHeaderNotSubcontractor</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 条件 */
+NOT(ISPICKVAL(OrderHeader__r.Status__c, &apos;Reception&apos;))
+&amp;&amp;
+ISPICKVAL(OrderHeader__r.ShippingCompany__r.Type, &apos;Subcontractor&apos;)
+&amp;&amp;
+(
+    ISCHANGED(Subcontractor__c)
+    ||
+    ISCHANGED(SubcontractorFlag__c)
+)
+&amp;&amp;
+(
+    NOT(ISBLANK(Subcontractor__c))
+    ||
+    SubcontractorFlag__c = TRUE
+)
+&amp;&amp;
+/* 項目 */
+ISBLANK(OrderHeader__r.SubcontractFee__c)</errorConditionFormula>
+    <errorMessage>下請けの場合、注文に下請け運賃が必ず設定されている必要があります。受注課に連絡してください。</errorMessage>
+</ValidationRule>

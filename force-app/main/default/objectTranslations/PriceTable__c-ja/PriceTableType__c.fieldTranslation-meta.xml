@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- タイプ --></label>
+    <name>PriceTableType__c</name>
+    <picklistValues>
+        <masterLabel>チャーター便</masterLabel>
+        <translation><!-- チャーター便 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>保管料</masterLabel>
+        <translation><!-- 保管料 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>小口便</masterLabel>
+        <translation><!-- 小口便 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>荷主横持</masterLabel>
+        <translation><!-- 荷主横持 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>路線便</masterLabel>
+        <translation><!-- 路線便 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

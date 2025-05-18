@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>31:ケース換算数×単価</fullName>
+        <default>true</default>
+        <label>31:ケース換算数×単価</label>
+    </customValue>
+    <customValue>
+        <fullName>32:重量×ケース数×単価</fullName>
+        <default>false</default>
+        <label>32:重量×ケース数×単価</label>
+    </customValue>
+    <masterLabel>金額計算区分</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

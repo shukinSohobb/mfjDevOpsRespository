@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>締めた請求書(請求日過ぎた場合)の金額変わった時に、経理課にメール通知する</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>経理課へ：締めた請求書金額変更通知</name>
+    <style>none</style>
+    <subject>【締めた請求書金額変更通知】：{!InvoiceDocument__c.Name}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotSaveSubcontractorAndVehicle</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+SubcontractorFlag__c = TRUE
+/* 判定項目 */
+&amp;&amp;
+( NOT(ISBLANK(VehicleMaster__c)) 
+||
+NOT(ISBLANK( DriverMaster__c)) 
+)</errorConditionFormula>
+    <errorMessage>下請けの場合、「自社ドライバー」または「車両」を入力できません。</errorMessage>
+</ValidationRule>

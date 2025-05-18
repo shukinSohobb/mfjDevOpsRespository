@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 所有権 --></label>
+    <name>OwnerAccount__c</name>
+    <relationshipLabel><!-- 車両マスタ --></relationshipLabel>
+</CustomFieldTranslation>

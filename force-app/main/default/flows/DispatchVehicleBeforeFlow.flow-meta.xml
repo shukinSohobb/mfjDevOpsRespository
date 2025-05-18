@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>setUniqueKey</name>
+        <label>一意キーを設定</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.UniqueKey__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UniqueKey_F</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>UniqueKey_F</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.VehicleMaster__c})
+    ,  NULL
+    , {!$Record.VehicleMaster__c}
+        &amp; TEXT(YEAR({!$Record.Date__c})) &amp; LPAD(TEXT(MONTH({!$Record.Date__c})), 2, &apos;0&apos;) &amp; LPAD(TEXT(DAY({!$Record.Date__c})), 2, &apos;0&apos;)
+)</expression>
+    </formulas>
+    <interviewLabel>配車車両の高速フロー {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>配車車両の高速フロー</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>setUniqueKey</targetReference>
+        </connector>
+        <object>DispatchVehicle__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

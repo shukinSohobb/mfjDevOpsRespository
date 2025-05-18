@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OverwriteDispatchDateTime__c</fullName>
+    <description>配車を上書き更新項目がTrueに変更したら自動的にNowの時間を設定。</description>
+    <label>配車を上書き時間</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

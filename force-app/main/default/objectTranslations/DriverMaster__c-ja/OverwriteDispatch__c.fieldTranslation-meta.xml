@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- onにして保存すると、配車した情報が定休に上書き保存できます --></help>
+    <label><!-- 配車を上書き更新 --></label>
+    <name>OverwriteDispatch__c</name>
+</CustomFieldTranslation>

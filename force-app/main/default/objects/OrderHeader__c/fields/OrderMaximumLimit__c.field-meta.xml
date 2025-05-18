@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrderMaximumLimit__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>「マルエス」発、チャーター／路線便の場合設定
+注文上限のレコード必ず事前登録をお願いします。
+後から登録された場合、上限との比較できません。</description>
+    <label>注文上限</label>
+    <referenceTo>OrderMaximumLimit__c</referenceTo>
+    <relationshipLabel>注文</relationshipLabel>
+    <relationshipName>OrderHeaderList</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

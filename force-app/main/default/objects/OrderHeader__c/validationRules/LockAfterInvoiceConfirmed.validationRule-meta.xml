@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LockAfterInvoiceConfirmed</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+NOT(ISCHANGED(ManualUpdateDatetime__c))
+&amp;&amp;
+OR(
+    ISPICKVAL(Status__c, &apos;InvoiceConfirmed&apos;)
+)
+&amp;&amp; 
+/* 判定項目 */
+OR(
+    ISCHANGED(CancelFee__c),
+    ISCHANGED(WaitTimeFee__c),
+    ISCHANGED(BillingDate__c),
+    ISCHANGED(InvoiceAccount__c),
+    ISCHANGED(OrderDetail_Cnt__c)
+)</errorConditionFormula>
+    <errorMessage>注文の「状態：請求処理済み」の後、「請求日」、「請求先（集計使用名）」、「キャンセル料」、「荷待ち料」、「注文明細の件数」は変更できません。</errorMessage>
+</ValidationRule>

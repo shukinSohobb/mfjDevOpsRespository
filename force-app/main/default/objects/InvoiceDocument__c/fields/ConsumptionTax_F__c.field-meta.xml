@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConsumptionTax_F__c</fullName>
+    <formula>IF(
+    /* 取引先の請求税区分が「税込請求」の場合のみ処理を実行 */
+    ISPICKVAL(Account__r.InvoiceTaxType__c, &quot;税込請求&quot;),
+    CASE(
+        /* 取引先の税小数点処理方法に応じた計算を実施 */
+        TEXT(Account__r.TaxRoundingMethod__c),
+        /* 小数点処理方法：切り上げ */
+        &quot;切り上げ&quot;, CEILING(SubtotalTaxExcluded_F__c * 0.1),
+        /* 小数点処理方法：切り捨て */
+        &quot;切り捨て&quot;, FLOOR(SubtotalTaxExcluded_F__c * 0.1),
+        /* それ以外の小数点処理方法：四捨五入 */
+        ROUND(SubtotalTaxExcluded_F__c * 0.1, 0)
+    ),
+    /* 請求税区分が「税込請求」以外の場合は0を返す */
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>消費税（１０％）</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckShippingCompanyTypeFor9999</fullName>
+    <active>true</active>
+    <description>注文の車番「9999」に設定の時、配送会社の種別は「下請け業者」だけを設定できます。</description>
+    <errorConditionFormula>/* 判定条件 */
+VehicleNumber__c == &apos;9999&apos;
+&amp;&amp;
+ NOT( ISBLANK( ShippingCompany__c ) )
+&amp;&amp;
+/* 判定項目 */
+NOT( ISPICKVAL( ShippingCompany__r.Type , &apos;Subcontractor&apos;) )</errorConditionFormula>
+    <errorDisplayField>ShippingCompany__c</errorDisplayField>
+    <errorMessage>車番が「9999」の場合、種別は「下請け業者」以外の配送会社は設定できません。</errorMessage>
+</ValidationRule>

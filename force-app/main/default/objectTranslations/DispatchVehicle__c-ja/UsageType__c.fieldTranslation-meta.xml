@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 利用種別 --></label>
+    <name>UsageType__c</name>
+    <picklistValues>
+        <masterLabel>オイル交換</masterLabel>
+        <translation><!-- オイル交換 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>点検</masterLabel>
+        <translation><!-- 点検 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>配送</masterLabel>
+        <translation><!-- 配送 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

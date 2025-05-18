@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Normal</fullName>
+        <default>true</default>
+        <label>10%</label>
+    </customValue>
+    <customValue>
+        <fullName>Reduced</fullName>
+        <default>false</default>
+        <label>8%（軽）</label>
+    </customValue>
+    <customValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>非課税</label>
+    </customValue>
+    <masterLabel>税区分</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

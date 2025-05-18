@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>SetName</name>
+        <label>名前設定</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NameFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.UniqueKey__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NameFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.TaxRoundingMethod__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TaxRoundingMethod_F</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.UnableToPrint__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UnableToPrintFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>請求書の高速フローです。</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NameFormula</name>
+        <dataType>String</dataType>
+        <expression>TEXT($Record.Type__c) + &quot;_&quot; + $Record.Account__r.AccountCode__c + &quot;-&quot; + TEXT(YEAR($Record.InvoiceDate__c)) + LPAD(TEXT(MONTH($Record.InvoiceDate__c)),2,&quot;0&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>TaxRoundingMethod_F</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    /* 請求書が確認済みの場合、税小数点処理方法が更新しない */
+    ISPICKVAL({!$Record.Status__c}, &quot;Confirmed&quot;),
+    TEXT({!$Record.TaxRoundingMethod__c}),
+    IF(
+        /* 取引先が空ではない場合、取引先の税小数点処理方法を返す */
+        NOT(ISBLANK({!$Record.Account__c})),
+        TEXT({!$Record.Account__r.TaxRoundingMethod__c}),
+        NULL
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>帳票不可の管理</description>
+        <name>UnableToPrintFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!$Record.Status__c}, &apos;Confirmed&apos;)
+&amp;&amp;
+{!$Record.Printed__c}</expression>
+    </formulas>
+    <interviewLabel>請求書の高速フロー {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>請求書の高速フロー</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>SetName</targetReference>
+        </connector>
+        <object>InvoiceDocument__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

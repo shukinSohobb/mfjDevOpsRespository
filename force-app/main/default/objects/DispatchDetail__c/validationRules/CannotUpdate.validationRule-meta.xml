@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotUpdate</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT( ISCHANGED( DispatchTableDownload__c ) ) 
+&amp;&amp;
+NOT( ISNEW() ) 
+&amp;&amp;
+ISPICKVAL( OrderHeader__r.Status__c , &quot;InvoiceConfirmed&quot;)</errorConditionFormula>
+    <errorMessage>注文の「状態：請求処理済み」の場合、「配車明細」は変更できません。</errorMessage>
+</ValidationRule>

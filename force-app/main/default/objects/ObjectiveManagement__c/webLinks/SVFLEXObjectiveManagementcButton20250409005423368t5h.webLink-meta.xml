@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SVFLEXObjectiveManagementcButton20250409005423368t5h</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>運送売上日報</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/svfcloud__PreviewPage?appId=ObjectiveManagement__c&amp;id={!ObjectiveManagement__c.Id}&amp;buttonFullName=SVFObjectiveManagementcButton20250409005423368t5h</url>
+</WebLink>

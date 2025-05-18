@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ToReceptionCompletedLoadingDate</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+NOT(
+    OR(
+        ISPICKVAL(Status__c, &quot;Reception&quot;),
+        ISPICKVAL(Status__c, &quot;Cancel&quot;)
+    )
+)
+&amp;&amp;
+/* 判定項目 */
+ISBLANK(LoadingDate__c)</errorConditionFormula>
+    <errorDisplayField>LoadingDate__c</errorDisplayField>
+    <errorMessage>「積込日」を入力してください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 勘定科目 --></label>
+    <name>AccountItem__c</name>
+    <picklistValues>
+        <masterLabel>仕入</masterLabel>
+        <translation><!-- 仕入 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>売掛_10%課税</masterLabel>
+        <translation><!-- 売掛_10%課税 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>売掛_8%課税</masterLabel>
+        <translation><!-- 売掛_8%課税 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>売掛_非課税</masterLabel>
+        <translation><!-- 売掛_非課税 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>支払手数料</masterLabel>
+        <translation><!-- 支払手数料 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>買掛_10%課税</masterLabel>
+        <translation><!-- 買掛_10%課税 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>買掛_8%課税</masterLabel>
+        <translation><!-- 買掛_8%課税 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>買掛_非課税</masterLabel>
+        <translation><!-- 買掛_非課税 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>雑収入</masterLabel>
+        <translation><!-- 雑収入 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

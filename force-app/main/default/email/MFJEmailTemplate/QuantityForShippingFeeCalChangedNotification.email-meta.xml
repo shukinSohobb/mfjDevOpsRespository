@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>配車課へ：運賃計算用数量の変更通知</name>
+    <style>none</style>
+    <subject>注文：{!OrderHeader__c.Name}の運賃計算用数量が変更されました</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

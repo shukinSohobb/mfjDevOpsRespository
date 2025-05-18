@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LockAfterDispatchCompleted</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+NOT(ISCHANGED(ManualUpdateDatetime__c))
+&amp;&amp;
+OR(
+    ISPICKVAL(Status__c, &apos;DispatchCompleted&apos;),
+    ISPICKVAL(Status__c, &apos;DeliveryCompleted&apos;),
+    ISPICKVAL(Status__c, &apos;Cancel&apos;),
+    ISPICKVAL(Status__c, &apos;InvoiceConfirmed&apos;)
+)
+&amp;&amp; NOT(ISPICKVAL(TransportationMode__c, &quot;ShippingOnly&quot;))
+&amp;&amp; 
+/* 判定項目 */
+OR(
+    ISCHANGED(SubcontractFee__c),
+    ISCHANGED(ShippingCompany__c)
+)</errorConditionFormula>
+    <errorMessage>注文の「状態：配車完了」の後、「下請け運賃」と「配送会社」は変更できません。</errorMessage>
+</ValidationRule>

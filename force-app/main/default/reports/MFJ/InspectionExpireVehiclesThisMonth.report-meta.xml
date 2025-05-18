@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>VehicleMaster__c$Name</field>
+    </columns>
+    <columns>
+        <field>VehicleMaster__c$VehicleType__c</field>
+    </columns>
+    <columns>
+        <field>VehicleMaster__c$DriverName__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <field>VehicleMaster__c$VehicleInspectionExpirationDate__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>今月車検満了の車両</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>VehicleMaster__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>VehicleMaster__c$VehicleInspectionExpirationDate__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

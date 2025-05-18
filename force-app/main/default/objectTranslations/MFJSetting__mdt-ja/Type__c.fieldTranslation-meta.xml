@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- データ型 --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>テキスト</masterLabel>
+        <translation><!-- テキスト --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>テキストエリア</masterLabel>
+        <translation><!-- テキストエリア --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>フラグ</masterLabel>
+        <translation><!-- フラグ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>数値</masterLabel>
+        <translation><!-- 数値 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
