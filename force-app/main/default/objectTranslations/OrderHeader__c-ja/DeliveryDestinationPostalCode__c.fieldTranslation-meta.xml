@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 納品先郵便番号 --></label>
+    <name>DeliveryDestinationPostalCode__c</name>
+</CustomFieldTranslation>

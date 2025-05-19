@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PeriodKindWeekCheck</fullName>
+    <active>true</active>
+    <description>「周期種別：月」の場合、各曜日のチェックボックスのみを選択させる</description>
+    <errorConditionFormula>/* 判定条件 */
+ISPICKVAL( PeriodKind__c , &quot;Weekly&quot;)
+&amp;&amp;
+/* 判定項目 */
+(!Monday__c &amp;&amp; !Tuesday__c &amp;&amp; !Wednesday__c 
+&amp;&amp; !Thursday__c &amp;&amp; !Friday__c &amp;&amp; !Saturday__c &amp;&amp; !Sunday__c)</errorConditionFormula>
+    <errorMessage>「周期種別：月」の場合、曜日をチェックしてください。</errorMessage>
+</ValidationRule>

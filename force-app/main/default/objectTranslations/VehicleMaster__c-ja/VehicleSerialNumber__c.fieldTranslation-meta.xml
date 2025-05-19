@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- ナンバープレートの「一連指定番号」を入力する項目です。 --></help>
+    <label><!-- 車番２ --></label>
+    <name>VehicleSerialNumber__c</name>
+</CustomFieldTranslation>

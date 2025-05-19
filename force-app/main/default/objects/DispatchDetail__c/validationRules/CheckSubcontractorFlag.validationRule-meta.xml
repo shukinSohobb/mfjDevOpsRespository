@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckSubcontractorFlag</fullName>
+    <active>true</active>
+    <description>注文の下請け運賃が未入力の場合、配車明細の下請けをチェックできない</description>
+    <errorConditionFormula>/* 判定条件 */ 
+ISBLANK( OrderHeader__r.SubcontractFee__c ) 
+&amp;&amp;
+/* 判定項目 */
+ SubcontractorFlag__c</errorConditionFormula>
+    <errorDisplayField>SubcontractorFlag__c</errorDisplayField>
+    <errorMessage>注文の「下請け運賃」を入力してください。</errorMessage>
+</ValidationRule>

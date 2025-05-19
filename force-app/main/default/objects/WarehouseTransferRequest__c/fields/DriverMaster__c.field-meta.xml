@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DriverMaster__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>ドライバー</label>
+    <referenceTo>DriverMaster__c</referenceTo>
+    <relationshipLabel>倉庫間移動</relationshipLabel>
+    <relationshipName>WarehouseTransferRequestList</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

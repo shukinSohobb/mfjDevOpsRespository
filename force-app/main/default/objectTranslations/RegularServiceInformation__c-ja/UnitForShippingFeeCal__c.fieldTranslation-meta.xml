@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 運賃計算用単位 --></label>
+    <name>UnitForShippingFeeCal__c</name>
+    <picklistValues>
+        <masterLabel>ケース</masterLabel>
+        <translation><!-- ケース --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>トン</masterLabel>
+        <translation><!-- トン --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>パレート</masterLabel>
+        <translation><!-- パレート --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>甲</masterLabel>
+        <translation><!-- 甲 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

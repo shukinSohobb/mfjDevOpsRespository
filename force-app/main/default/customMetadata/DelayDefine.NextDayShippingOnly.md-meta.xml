@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>翌日出荷受付-チャーター便</label>
+    <protected>false</protected>
+    <values>
+        <field>FormulaField__c</field>
+        <value xsi:type="xsd:string">注文.NextDayShippingOnlyDelayFlag_F__c</value>
+    </values>
+    <values>
+        <field>MessageBody__c</field>
+        <value xsi:type="xsd:string">倉庫課の対応が遅れています</value>
+    </values>
+    <values>
+        <field>Note__c</field>
+        <value xsi:type="xsd:string">積込日の前日の15時まで</value>
+    </values>
+    <values>
+        <field>TransportationMode__c</field>
+        <value xsi:type="xsd:string">ShippingOnly</value>
+    </values>
+</CustomMetadata>

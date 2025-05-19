@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- グループ --></label>
+    <name>Group__c</name>
+    <picklistValues>
+        <masterLabel>GP1XXXXXX1：グループ1----1----X</masterLabel>
+        <translation><!-- GP1XXXXXX1：グループ1- - - - 1- - - - X --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

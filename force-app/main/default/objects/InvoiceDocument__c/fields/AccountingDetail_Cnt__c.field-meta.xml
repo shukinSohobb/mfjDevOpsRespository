@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountingDetail_Cnt__c</fullName>
+    <label>請求・支払明細の件数</label>
+    <summaryForeignKey>AccountingDetail__c.InvoiceDocument__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

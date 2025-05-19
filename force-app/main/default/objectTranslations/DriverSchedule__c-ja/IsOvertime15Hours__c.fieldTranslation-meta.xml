@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 拘束時間15h超過 --></label>
+    <name>IsOvertime15Hours__c</name>
+</CustomFieldTranslation>

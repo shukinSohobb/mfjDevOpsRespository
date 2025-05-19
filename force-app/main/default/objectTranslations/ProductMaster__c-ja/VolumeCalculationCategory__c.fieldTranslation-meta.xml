@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 容積計算区分 --></label>
+    <name>VolumeCalculationCategory__c</name>
+    <picklistValues>
+        <masterLabel>8：ケース容積+ボール容積+バラ容積</masterLabel>
+        <translation><!-- 8：ケース容積+ボール容積+バラ容積 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

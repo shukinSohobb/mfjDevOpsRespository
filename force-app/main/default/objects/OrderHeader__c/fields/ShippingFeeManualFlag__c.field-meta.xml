@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShippingFeeManualFlag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>チェックしたら自動計算が止まる</description>
+    <label>運賃手動計算フラグ</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

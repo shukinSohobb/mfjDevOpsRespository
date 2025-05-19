@@ -1,0 +1,11 @@
+<template>
+  <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+    <template for:each={buttonList} for:item="buttonList2" for:index="index">
+      <div class={buttonList2.class} key={buttonList2.image} style={innerstyle}>
+        <a href="#" id="bottle" onclick={clickbutton} data-url={buttonList2.src}>
+          <img src={buttonList2.image} alt="bottle" style={buttonCss} />
+        </a>
+      </div>
+    </template>
+  </div>
+</template>

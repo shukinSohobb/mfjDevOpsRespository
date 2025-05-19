@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckShippingCompanyAccountCodeFor9999</fullName>
+    <active>true</active>
+    <description>注文の車番「9999」に設定の時、配送会社マルエス（9901）に設定できません。</description>
+    <errorConditionFormula>/* 判定条件 */
+VehicleNumber__c == &apos;9999&apos;
+&amp;&amp;
+NOT( ISBLANK( ShippingCompany__c ) )
+&amp;&amp;
+/* 判定項目 */
+ShippingCompany__r.AccountCode__c == &apos;9901&apos;</errorConditionFormula>
+    <errorDisplayField>ShippingCompany__c</errorDisplayField>
+    <errorMessage>車番が「9999」の場合、配送会社に「マルエス」を選択できません。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>各課の対応がある期限を過ぎた際、この中のメッセージが対象レコードに表示されます</description>
+    <label>各課遅延の定義</label>
+    <visibility>Public</visibility>
+</CustomObject>

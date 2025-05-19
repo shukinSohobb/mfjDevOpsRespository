@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 見積書記載日付 --></label>
+    <name>EstimateDate__c</name>
+</CustomFieldTranslation>

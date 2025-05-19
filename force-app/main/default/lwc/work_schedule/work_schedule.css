@@ -1,0 +1,35 @@
+table thead th {
+  background-color: #e5f2fa;
+  color: #000000;
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #E0E1E3;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+table tbody th {
+  background-color: #ffffff;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.nothavedmaster {
+  background-color: rgb(239, 204, 49) !important;  
+}
+th {
+  border-style: outset;
+}
+td {
+  border-style: outset;
+}
+.saturday {
+  color: blue !important;
+}
+.sunday {
+  color: red !important;
+}

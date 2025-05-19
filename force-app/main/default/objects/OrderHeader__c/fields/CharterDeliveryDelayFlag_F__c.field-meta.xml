@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CharterDeliveryDelayFlag_F__c</fullName>
+    <formula>NOT(
+    ISBLANK(TEXT(TransportationMode__c)) 
+    ||
+    ISBLANK(TEXT(Status__c)) 
+    ||
+    ISBLANK(LoadingDate__c)
+)
+&amp;&amp;
+/* TEXT(TransportationMode__c) = TEXT($CustomMetadata.DelayDefine__mdt.CharterDelivery.TransportationMode__c) */
+ISPICKVAL(TransportationMode__c, &quot;Charter&quot;)
+&amp;&amp;
+/* 注文の状態は「受付」 */
+ISPICKVAL(Status__c, &quot;Reception&quot;)
+&amp;&amp;
+NOW() 
+&gt; 
+( 
+    /* 積込日の前日 */
+    DATETIMEVALUE(LoadingDate__c - 1) 
+    + 
+    /* 12時JST = 3:00:00Z GMT */
+    3/24 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>チャーター便遅延フラグ</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

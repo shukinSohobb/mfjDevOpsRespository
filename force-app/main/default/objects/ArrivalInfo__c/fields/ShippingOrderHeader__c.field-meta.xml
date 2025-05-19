@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShippingOrderHeader__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>有償（元）出庫用注文のリンク</description>
+    <label>出庫用注文</label>
+    <referenceTo>OrderHeader__c</referenceTo>
+    <relationshipLabel>入庫</relationshipLabel>
+    <relationshipName>ArrivalInfoList</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

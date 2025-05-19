@@ -1,0 +1,105 @@
+<apex:page contentType="text/css">@page {
+    size: A4 landscape;
+    margin: 1cm;
+  }
+  
+  html,
+  body {
+    font-family: 'Arial Unicode MS';
+    font-size: 11px;
+    margin: 0;
+    padding:
+      0;
+  }
+  
+  /*****************************************/
+  .date-week-container {
+    width: 15%;
+    margin-bottom: 20px;
+  }
+  
+  .date-week-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .date-week-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align:
+      left;
+  }
+  
+  /****************************************/
+  table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    /*border: 1px solid black;*/
+  }
+  
+  .table-container1 {
+    float: left;
+    width: 30%;
+    margin-right: 3%;
+  }
+  
+  .table-container1 td,
+  .table-container2 td,
+  .table-container3 td {
+    border-left: none;
+    border-top:
+      none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table-container2 {
+    float:
+      left;
+    width: 35%;
+    margin-right: 3%;
+  }
+  
+  .table-container3 {
+    float: left;
+    width: 60%;
+  }
+  
+  .table-container4 {
+    float: left;
+    width: 83%;
+  }
+  
+  .table-container5 {
+    float: left;
+    height: 223px;
+    width: 15%;
+    margin-left: 10px;
+    border: 1px solid #000;
+  }
+  
+  .table-container5 td {
+    border: none;
+  }
+  
+  table.table-left td {
+    border: 1px solid black;
+    text-align: middle !important;
+  }
+  
+  table.table-left td[rowspan="4"] {
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  
+  </apex:page>

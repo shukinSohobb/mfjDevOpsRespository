@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>請求書</value>
+    </caseValues>
+    <layouts>
+        <layout>請求書レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 項目 --></label>
+            <section>項目</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- 承認の申請 --></label>
+        <name>InvoiceDocumentApprovalRequest</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- 請求書出力 --></label>
+        <name>InvoiceDocumentDownloadDemo</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- 運送請求書 - 帳票 --></label>
+        <name>UpdateOpenPreview</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- 請求書 --></label>
+        <name>Invoice</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 支払書 --></label>
+        <name>Payment</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- 請求書の「状態：処理済み」の場合、「仕分明細の件数」は変更できません。 --></errorMessage>
+        <name>LockAccountingDetailCountAfterConfirmed</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- SVFInvoiceDocumentcButton20250407054604461Rcn --></label>
+        <name>SVFInvoiceDocumentcButton20250407054604461Rcn</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFInvoiceDocumentcListButton20250407054604461Rcn --></label>
+        <name>SVFInvoiceDocumentcListButton20250407054604461Rcn</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFLEXInvoiceDocumentcButton20250407054604461Rcn --></label>
+        <name>SVFLEXInvoiceDocumentcButton20250407054604461Rcn</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFLEXInvoiceDocumentcListButton20250407054604461Rcn --></label>
+        <name>SVFLEXInvoiceDocumentcListButton20250407054604461Rcn</name>
+    </webLinks>
+</CustomObjectTranslation>

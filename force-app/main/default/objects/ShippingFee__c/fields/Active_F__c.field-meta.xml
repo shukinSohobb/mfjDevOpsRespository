@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_F__c</fullName>
+    <formula>PriceTable__r.Active_F__c &amp;&amp; Active__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>有効</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

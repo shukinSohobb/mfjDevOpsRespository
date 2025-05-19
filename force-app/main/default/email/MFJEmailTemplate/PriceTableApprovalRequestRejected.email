@@ -1,0 +1,8 @@
+{!PriceTable__c.OwnerFullName} 様
+
+お疲れ様です。
+
+下記の請求書の申請が却下されました。ご確認ください。
+
+価格管理名：{!PriceTable__c.Name}
+価格管理レコードのリンク：{!PriceTable__c.Link}

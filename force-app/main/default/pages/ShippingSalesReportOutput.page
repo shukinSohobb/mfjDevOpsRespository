@@ -1,0 +1,320 @@
+<apex:page StandardController="ShippingSalesReport__c" renderAs="pdf" applyhtmltag="false" showheader="false" extensions="ShippingSalesReportOutputCtrl" action="{!init}">
+    <head>
+        <style>
+            <apex:composition template="ShippingSalesReportOutput_CSS"><apex:define name="StyleSheet" /></apex:composition>
+        </style>
+    </head>
+<body> 
+    <!--apex:messages /--> 
+    <apex:outputPanel rendered="{!hasError}">
+            <p style="color:red;font-size:14px;"><apex:outputText value="{!errorMessage}" escape="false"/></p>
+    </apex:outputPanel>
+
+    <apex:outputPanel rendered="{!!hasError}">
+    <div class="date-week-container">
+        <table class="date-week-table">
+            <tr>
+                <td id="date-cell">{!formattedDate}</td>
+                <td id="week-cell">{!formattedWeekday}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-container1">
+        <table>
+            <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="30%" />
+                <col width="30%" />
+            </colgroup>
+            <tr>
+                <th style="border-bottom: 3px double black;">売上細目</th>
+                <th></th>
+                <th></th>
+                <th style="font-size: 8px;font-weight: normal;"> 占有率</th>
+            </tr>
+            <tr>
+                <td>一般</td>
+                <td></td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.GeneralSales_F__c))}">
+                    <apex:param value="{!report.GeneralSales_F__c}" />
+                </apex:outputText></td>
+                <td>{!GeneralSalesPercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2"> シャトレーゼ</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.ChateraiseSales__c))}">
+                    <apex:param value="{!report.ChateraiseSales__c}" />
+                </apex:outputText></td>
+                <td>{!ChateraiseSalesPercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2"> 富士エコー・ローソン</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.FujiEchoSales_F__c))}">
+                    <apex:param value="{!report.FujiEchoSales_F__c}" />
+                </apex:outputText></td>
+                <td>{!FujiEchoSalesPercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2"> 全体合計</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.TotalSales_F__c))}">
+                    <apex:param value="{!report.TotalSales_F__c}" />
+                </apex:outputText></td>
+                <td> {!TotalSalesPercent}%</td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-container1">
+        <table>
+            <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="30%" />
+                <col width="30%" />
+            </colgroup>
+            <tr>
+                <th style="border-bottom: 3px double black;">下払い金額</th>
+                <th></th>
+                <th></th>
+                <th style="font-size: 8px;font-weight: normal;">占有率</th>
+            </tr>
+            <tr>
+                <td> 一般</td>
+                <td></td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.GeneralSalesSubcontractorSales_F__c))}">
+                    <apex:param value="{!report.GeneralSalesSubcontractorSales_F__c}" />
+                </apex:outputText></td>
+                <td>{!GeneralPaymentPercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2"> シャトレーゼ</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.ChateraiseSubcontractorSales__c))}">
+                    <apex:param value="{!report.ChateraiseSubcontractorSales__c}" />
+                </apex:outputText></td>
+                <td>{!ChateraisePaymentPercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2">富士エコー・ローソン</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.FujiEchoCharteredVehicleSubcontractSales__c))}">
+                    <apex:param value="{!report.FujiEchoCharteredVehicleSubcontractSales__c}" />
+                </apex:outputText></td>
+                <td>{!FujiEchoPaymentPercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2"> 全体合計</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.TotalSubcontractorSales_F__c))}">
+                    <apex:param value="{!report.TotalSubcontractorSales_F__c}" />
+                </apex:outputText></td>
+                <td> {!TotalPaymentPercent}%</td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-container1">
+        <table>
+            <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="30%" />
+                <col width="30%" />
+            </colgroup>
+            <tr>
+                <th style="border-bottom: 3px double black;">差額</th>
+                <th></th>
+                <th></th>
+                <th style="font-size: 8px;font-weight: normal;">占有率</th>
+            </tr>
+            <tr>
+                <td> 一般</td>
+                <td></td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(GeneralBalance))}">
+                    <apex:param value="{!GeneralBalance}" />
+                </apex:outputText></td>
+                <td>{!GeneralBalancePercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2"> シャトレーゼ</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(ChateraiseBalance))}">
+                    <apex:param value="{!ChateraiseBalance}" />
+                </apex:outputText></td>
+                <td>{!ChateraiseBalancePercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2"> 富士エコー・ローソン</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(FujiEchoBalance))}">
+                    <apex:param value="{!FujiEchoBalance}" />
+                </apex:outputText></td>
+                <td>{!FujiEchoBalancePercent}%</td>
+            </tr>
+            <tr>
+                <td colspan="2"> 全体合計</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(TotalBalance))}">
+                    <apex:param value="{!TotalBalance}" />
+                </apex:outputText></td>
+                <td> {!TotalBalancePercent}%</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container2">
+        <table>
+            <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="20%" />
+                <col width="20%" />
+                <col width="20%" />
+            </colgroup>
+            <tr>
+                <th style="border-bottom: 3px double black;">目標・実績</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>{!month}月度&nbsp;&nbsp;{!phase}期売上目標</td>
+                <td></td>
+                <td>
+                    <apex:outputText value="{0, number, ¥#,##0}" rendered="{!phase == 1 && NOT(ISBLANK(report.ObjectiveManagement__r.FirstTermSalesTarget__c))}">
+                        <apex:param value="{!report.ObjectiveManagement__r.FirstTermSalesTarget__c}" />
+                    </apex:outputText>
+                    <apex:outputText value="{0, number, ¥#,##0}" rendered="{!phase == 2 && NOT(ISBLANK(report.ObjectiveManagement__r.SecondTermSalesTarget__c))}">
+                        <apex:param value="{!report.ObjectiveManagement__r.SecondTermSalesTarget__c}" />
+                    </apex:outputText>
+                    <apex:outputText value="{0, number, ¥#,##0}" rendered="{!phase == 3 && NOT(ISBLANK(report.ObjectiveManagement__r.ThirdTermSalesTarget__c))}">
+                        <apex:param value="{!report.ObjectiveManagement__r.ThirdTermSalesTarget__c}" />
+                    </apex:outputText>
+                </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td colspan="2">{!month}月度&nbsp;&nbsp;{!phase}期売上累計</td>
+                <td>
+                    <apex:outputText value="{0, number, ¥#,##0}" rendered="{!phase == 1 && NOT(ISBLANK(phase1Actual))}">
+                        <apex:param value="{!phase1Actual}" />
+                    </apex:outputText>
+                    <apex:outputText value="{0, number, ¥#,##0}" rendered="{!phase == 2 && NOT(ISBLANK(phase2Actual))}">
+                        <apex:param value="{!phase2Actual}" />
+                    </apex:outputText>
+                    <apex:outputText value="{0, number, ¥#,##0}" rendered="{!phase == 3 && NOT(ISBLANK(phase3Actual))}">
+                        <apex:param value="{!phase3Actual}" />
+                    </apex:outputText>
+                </td>
+                <td> 進捗率</td>
+                <td>
+                    <apex:outputText value="{!phase1AchievementRate}" rendered="{!phase == 1 && NOT(ISBLANK(phase1Actual))}"></apex:outputText>
+                    <apex:outputText value="{!phase2AchievementRate}" rendered="{!phase == 2 && NOT(ISBLANK(phase2Actual))}"></apex:outputText>
+                    <apex:outputText value="{!phase3AchievementRate}" rendered="{!phase == 3 && NOT(ISBLANK(phase3Actual))}"></apex:outputText>
+                    %</td>
+            </tr>
+            <tr>
+                <td colspan="2">1期実績</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(phase1Actual))}">
+                    <apex:param value="{!phase1Actual}" />
+                </apex:outputText></td>
+                <td> 達成率</td>
+                <td>{!phase1AchievementRate}%</td>
+            </tr>
+            <tr>
+                <td colspan="2">2期実績</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(phase2Actual))}">
+                    <apex:param value="{!phase2Actual}" />
+                </apex:outputText></td>
+                <td> 達成率</td>
+                <td>{!phase2AchievementRate}%</td>
+            </tr>
+            <tr>
+                <td colspan="2">3期実績</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(phase3Actual))}">
+                    <apex:param value="{!phase3Actual}" />
+                </apex:outputText></td>
+                <td> 達成率</td>
+                <td>{!phase3AchievementRate}%</td>
+            </tr>
+            <tr>
+                <td colspan="2">今月売上目標</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(monthTarget))}">
+                    <apex:param value="{!monthTarget}" />
+                </apex:outputText></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">今月売上実績</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(monthActual))}">
+                    <apex:param value="{!monthActual}" />
+                </apex:outputText></td>
+                <td> 達成率</td>
+                <td>{!monthAchievementRate}%</td>
+            </tr>
+            <tr>
+                <td colspan="2">前年同月売上実績</td>
+                <td><apex:outputText value="{0, number, ¥#,##0}" rendered="{!NOT(ISBLANK(report.ObjectiveManagement__r.SameMonthLastYearTotalSales_F__c))}">
+                    <apex:param value="{!report.ObjectiveManagement__r.SameMonthLastYearTotalSales_F__c}" />
+                </apex:outputText></td>
+                <td>前年同月比</td>
+                <td>{!lastYearSameMonthRate}%</td>
+            </tr>
+        </table>
+        </div>
+        <div class="table-container3">
+            <div style="height:200px;"></div>
+            <div class="table-container4">
+                <table class="table-left" style="table-layout: fixed;">
+                    <tr>
+                        <td rowspan="4">確&nbsp;認&nbsp;印</td>
+                        <td>佐野部長</td>
+                        <td>中沢顧問</td>
+                        <td>数野部長</td>
+                        <td>望月課長</td>
+                        <td>長田課長</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr style="height:80px;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>鍋島課長</td>
+                        <td>小池課長</td>
+                        <td>青柳</td>
+                        <td>横内</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>作成者</td>
+                    </tr>
+                    <tr style="height:80px;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr> 
+                </table>
+            </div>
+
+            <div class="table-container5">
+            <table style="table-layout: fixed;">
+                <tr>
+                <td style="text-align: left;vertical-align: top;padding: 5px;">コメント</td>
+                </tr>
+            </table>
+            </div>
+            
+       </div>
+    </apex:outputPanel>
+    </body>
+</apex:page>

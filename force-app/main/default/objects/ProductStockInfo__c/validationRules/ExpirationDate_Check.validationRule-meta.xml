@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExpirationDate_Check</fullName>
+    <active>true</active>
+    <description>荷主の「引き当て順位：賞味期限」の場合、「賞味期限」の入力が必須になります。</description>
+    <errorConditionFormula>/*判断条件*/
+ (AllocationPriority_F__c == &quot;ExpirationDate&quot;)
+&amp;&amp;
+/*判断結果*/
+ISBLANK(  ExpirationDate__c )</errorConditionFormula>
+    <errorDisplayField>ExpirationDate__c</errorDisplayField>
+    <errorMessage>「賞味期限」を入力してください。</errorMessage>
+</ValidationRule>

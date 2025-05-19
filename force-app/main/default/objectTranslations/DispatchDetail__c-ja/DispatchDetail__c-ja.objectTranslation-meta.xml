@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>配車明細</value>
+    </caseValues>
+    <layouts>
+        <layout>配車明細レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- 納品伝票 --></label>
+        <name>OutputDeliverySlipAction</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- 帳票 --></label>
+        <name>OutputReportFormAction</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- 「傭車車両」を入力する場合、「下請け業者」、「下請け」を入力してください。 --></errorMessage>
+        <name>CannotSaveCharteredVehicleNumber</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 下請けの場合、「自社ドライバー」または「車両」を入力できません。 --></errorMessage>
+        <name>CannotSaveSubcontractorAndVehicle</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文の「状態：請求処理済み」の場合、「配車明細」は変更できません。 --></errorMessage>
+        <name>CannotUpdate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文の「下請け運賃」を入力してください。 --></errorMessage>
+        <name>CheckSubcontractorFlag</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文車番が「9999」のため、傭車として設定できません。 --></errorMessage>
+        <name>CheckSubcontractorFlag9999</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 下請けの場合、注文に下請け運賃が必ず設定されている必要があります。受注課に連絡してください。 --></errorMessage>
+        <name>OrderHeaderNotSubcontractor</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「下請け業者」を設定する場合、「下請け」をチェックしてください。 --></errorMessage>
+        <name>SubcontractorFlagFalse</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「自社ドライバー」を設定する場合、「下請け」をチェックできません。 --></errorMessage>
+        <name>SubcontractorFlagTrue</name>
+    </validationRules>
+</CustomObjectTranslation>

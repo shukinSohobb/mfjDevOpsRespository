@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>4t</fullName>
+        <default>false</default>
+        <label>4t</label>
+    </customValue>
+    <customValue>
+        <fullName>4tPlus</fullName>
+        <default>false</default>
+        <label>4t増トン</label>
+    </customValue>
+    <customValue>
+        <fullName>10t</fullName>
+        <default>true</default>
+        <label>10t</label>
+    </customValue>
+    <customValue>
+        <fullName>10tPlus</fullName>
+        <default>false</default>
+        <label>10t増トン</label>
+    </customValue>
+    <customValue>
+        <fullName>Trailer</fullName>
+        <default>false</default>
+        <label>トレーラー</label>
+    </customValue>
+    <masterLabel>車種</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

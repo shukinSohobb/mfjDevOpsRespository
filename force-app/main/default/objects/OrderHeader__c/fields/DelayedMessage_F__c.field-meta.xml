@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DelayedMessage_F__c</fullName>
+    <externalId>false</externalId>
+    <formula>BLANKVALUE
+(
+    (
+        /*チャーター便遅延*/
+        IF(
+            CharterDeliveryDelayFlag_F__c,
+            &quot;受注課の対応が遅れています。&quot; &amp; TransportationModeLabel_F__c &amp; &quot;の注文、&quot;&amp; TEXT(LoadingDate__c - 1) &amp; &quot;の12時まで受付確認が必要です。&quot; &amp;BR(),
+            NULL
+        )
+        &amp; 
+        /*路線便出荷受付遅延*/
+        IF(
+            RouteDeliveryDelayFlag_F__c,
+            &quot;受注課の対応が遅れています。&quot; &amp; TransportationModeLabel_F__c &amp; &quot;の注文、&quot; &amp; TEXT(LoadingDate__c) &amp; &quot;の12時まで受付確認が必要です。&quot; &amp;BR(),
+            NULL
+        )
+        &amp;
+        /*配車表作成の為の配車組み遅延*/
+        IF(
+            DispatchListCreateDelayFlag_F__c,
+            &quot;配車課の対応が遅れています。&quot; &amp; TransportationModeLabel_F__c &amp; &quot;の注文、&quot; &amp; TEXT(LoadingDate__c - 1) &amp; &quot;の12時まで配車処理完了が必要です。&quot; &amp;BR(),
+            NULL
+        )
+        &amp;
+        /*富士エコーの配車組み確定遅延*/
+        IF(
+            FujiEchoDispatchListDelayFlag_F__c,
+            &quot;配車課の対応が遅れています。&quot; &amp; TransportationModeLabel_F__c &amp; &quot;の注文、&quot; &amp; TEXT(ExpectedDeliveryDate__c - 1) &amp; &quot;の14時まで配車処理完了が必要です。&quot; &amp;BR(),
+            NULL
+        )
+        &amp;
+        /*翌日出荷分のピッキングリスト遅延*/
+        IF(
+            NextDayPickingDelayFlag_F__c,
+            &quot;倉庫課の対応が遅れています。&quot; &amp; TransportationModeLabel_F__c &amp; &quot;の注文、&quot; &amp; TEXT(LoadingDate__c - 1) &amp; &quot;の15時まで受付確認が必要です。&quot; &amp;BR(),
+            NULL
+        )
+        &amp;
+        /*翌日出荷受付（倉庫）遅延*/
+        IF(
+            NextDayShippingOnlyDelayFlag_F__c,
+            &quot;倉庫課の対応が遅れています。&quot; &amp; TransportationModeLabel_F__c &amp; &quot;の注文、&quot; &amp; TEXT(LoadingDate__c - 1) &amp; &quot;の18時まで在庫引当完了が必要です。&quot; &amp;BR(),
+            NULL
+        )
+        &amp;
+        /*路線便ピッキングリスト遅延*/
+        IF(
+            RouteDeliveryPickingDelayFlag_F__c,
+            &quot;倉庫課の対応が遅れています。&quot; &amp; TransportationModeLabel_F__c &amp; &quot;の注文、&quot; &amp; TEXT(LoadingDate__c) &amp; &quot;の13時まで在庫引当完了が必要です。&quot; &amp;BR(),
+            NULL
+        )
+    ),
+    &quot;遅延なし&quot;
+)</formula>
+    <label>遅延メッセージ</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

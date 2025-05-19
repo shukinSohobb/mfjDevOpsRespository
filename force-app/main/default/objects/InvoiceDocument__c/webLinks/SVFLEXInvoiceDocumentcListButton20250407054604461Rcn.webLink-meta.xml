@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SVFLEXInvoiceDocumentcListButton20250407054604461Rcn</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>運送請求書 - 帳票</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/apex/SVFLEXL164720250407054604461Rcn?appId=InvoiceDocument__c&amp;buttonFullName=SVFInvoiceDocumentcButton20250407054604461Rcn</url>
+</WebLink>

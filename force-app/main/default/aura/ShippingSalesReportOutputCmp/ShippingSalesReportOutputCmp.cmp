@@ -1,0 +1,37 @@
+<aura:component controller="ShippingSalesReportOutputCtrl" implements="force:hasRecordId,flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="String" access="public"/>
+    <aura:attribute name="pdfUrl" type="String" />
+    <aura:attribute name="hasError" type="Boolean" default="false"/>
+    <aura:attribute name="errorMessage" type="String"/>
+
+    <aura:html tag="style">
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .pdf-frame {
+            flex: 1;
+            border: none;
+        }
+        .btn-container {
+            text-align: center;
+            padding: 10px;
+        }
+    </aura:html>
+
+    <div class="container">
+        <aura:if isTrue="{!not(empty(v.pdfUrl))}">
+            <iframe src="{!v.pdfUrl}" class="pdf-frame"></iframe>
+        </aura:if>
+
+        <div class="btn-container">
+            <aura:if isTrue="{!v.hasError}">
+                <p style="color:red;font-size:14px;">{!v.errorMessage}</p>
+            </aura:if>    
+            <lightning:button label="Salesforce Filesへアップロード" onclick="{!c.uploadPdf}" class="slds-button slds-button_brand" />
+        </div>
+    </div>
+
+</aura:component>

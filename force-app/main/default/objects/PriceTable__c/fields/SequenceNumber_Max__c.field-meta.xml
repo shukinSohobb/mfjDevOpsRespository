@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SequenceNumber_Max__c</fullName>
+    <label>最大枝番</label>
+    <summarizedField>ShippingFee__c.SequenceNumber__c</summarizedField>
+    <summaryForeignKey>ShippingFee__c.PriceTable__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

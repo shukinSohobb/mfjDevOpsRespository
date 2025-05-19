@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductMaster__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>商品マスタ</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>ProductMaster__c.StandardUnit__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>ProductMaster__c</referenceTo>
+    <relationshipLabel>保管料</relationshipLabel>
+    <relationshipName>StorageFee</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

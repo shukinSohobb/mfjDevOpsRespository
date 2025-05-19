@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FirstWarehouseMaster__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>枝番が1の注文明細のピッキングリストの最初のレコードの在庫情報の倉庫</description>
+    <label>Firstピッキングの倉庫</label>
+    <referenceTo>WarehouseMaster__c</referenceTo>
+    <relationshipLabel>注文</relationshipLabel>
+    <relationshipName>OrderHeaderList</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeliverySystemURLLink__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(Destination__r.DeliverySystem__r.LoginUrl__c,Destination__r.DeliverySystem__r.LoginUrl__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>納品システムURL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

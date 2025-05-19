@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 処理分類 --></label>
+    <name>ProcessType__c</name>
+    <picklistValues>
+        <masterLabel>ArrivedScheduleBatch</masterLabel>
+        <translation><!-- ArrivedScheduleBatch --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ShippedScheduleBatch</masterLabel>
+        <translation><!-- ShippedScheduleBatch --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TUMIX出勤実績インポート</masterLabel>
+        <translation><!-- TUMIX出勤実績インポート --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>レコードの手動更新</masterLabel>
+        <translation><!-- レコードの手動更新 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>保管料の請求・支払明細作成のバッチ</masterLabel>
+        <translation><!-- 保管料の請求・支払明細作成のバッチ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>定休日勤務情報の自動生成</masterLabel>
+        <translation><!-- 定休日勤務情報の自動生成 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>定休日変更時勤務情報変動</masterLabel>
+        <translation><!-- 定休日変更時勤務情報変動 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>定期便注文作成バッチ</masterLabel>
+        <translation><!-- 定期便注文作成バッチ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>富士エコー運賃明細インポート</masterLabel>
+        <translation><!-- 富士エコー運賃明細インポート --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>注文の関連レコードのロールバック</masterLabel>
+        <translation><!-- 注文の関連レコードのロールバック --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>運賃売上日報作成バッチ</masterLabel>
+        <translation><!-- 運賃売上日報作成バッチ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>運送売上実績表PDF出力</masterLabel>
+        <translation><!-- 運送売上実績表PDF出力 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

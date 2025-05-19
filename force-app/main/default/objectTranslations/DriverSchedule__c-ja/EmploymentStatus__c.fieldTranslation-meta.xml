@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 就業 --></label>
+    <name>EmploymentStatus__c</name>
+    <picklistValues>
+        <masterLabel>出勤</masterLabel>
+        <translation><!-- 出勤 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>有休</masterLabel>
+        <translation><!-- 有休 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>特別休</masterLabel>
+        <translation><!-- 特別休 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

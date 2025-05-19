@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 競合先 --></label>
+    <name>SFDC_Kyogo__c</name>
+    <picklistValues>
+        <masterLabel>その他</masterLabel>
+        <translation><!-- その他 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>競合先A社</masterLabel>
+        <translation><!-- 競合先A社 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>競合先B社</masterLabel>
+        <translation><!-- 競合先B社 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>競合先C社</masterLabel>
+        <translation><!-- 競合先C社 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

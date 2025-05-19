@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 注文上限 --></label>
+    <name>OrderMaximumLimit__c</name>
+    <relationshipLabel><!-- 注文 --></relationshipLabel>
+</CustomFieldTranslation>

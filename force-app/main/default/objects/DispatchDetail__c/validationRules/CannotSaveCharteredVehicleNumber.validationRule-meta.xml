@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotSaveCharteredVehicleNumber</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */ 
+NOT( ISBLANK( CharteredVehicleNumber__c ) || CharteredVehicleNumber__c == &apos;9999&apos;) 
+&amp;&amp;
+/* 判定項目 */
+ISBLANK(  Subcontractor__c )</errorConditionFormula>
+    <errorMessage>「傭車車両」を入力する場合、「下請け業者」、「下請け」を入力してください。</errorMessage>
+</ValidationRule>

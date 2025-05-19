@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ArrivalDate_Check</fullName>
+    <active>true</active>
+    <description>荷主の引き当て順位は入庫日の場合、入庫日の入力が必須になります。</description>
+    <errorConditionFormula>/*判断条件*/ 
+(AllocationPriority_F__c == &quot;ArrivalDate&quot;) 
+&amp;&amp;
+/*判断結果*/
+ ISBLANK( ArrivalDate__c )</errorConditionFormula>
+    <errorDisplayField>ArrivalDate__c</errorDisplayField>
+    <errorMessage>「入庫日」を入力してください。</errorMessage>
+</ValidationRule>

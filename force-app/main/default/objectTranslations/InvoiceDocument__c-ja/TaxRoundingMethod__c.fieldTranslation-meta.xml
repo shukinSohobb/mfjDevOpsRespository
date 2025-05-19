@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 税小数点処理方法 --></label>
+    <name>TaxRoundingMethod__c</name>
+    <picklistValues>
+        <masterLabel>切り上げ</masterLabel>
+        <translation><!-- 切り上げ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>切り捨て</masterLabel>
+        <translation><!-- 切り捨て --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>四捨五入</masterLabel>
+        <translation><!-- 四捨五入 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

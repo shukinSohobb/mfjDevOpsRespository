@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DispatchDetails_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>AccountName_F__c</fields>
+    <fields>LoadingDate_F__c</fields>
+    <fields>ExpectedDeliveryDate_F__c</fields>
+    <fields>DriverMaster__c</fields>
+    <fields>SubcontractorFlag__c</fields>
+    <fields>DelayedMessage_F__c</fields>
+    <label>配車明細コンパクトレイアウト</label>
+</CompactLayout>

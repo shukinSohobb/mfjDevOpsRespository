@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AmountEmpty</fullName>
+    <active>true</active>
+    <description>手動注文の場合、注文確定した場合、もし金額が空白でしたら、エラーを表示。</description>
+    <errorConditionFormula>/* 判定条件 */
+(ISNEW() || ISPICKVAL( PRIORVALUE( Status__c ), &quot;Reception&quot;))
+&amp;&amp; ISPICKVAL( Status__c , &quot;ReceptionCompleted&quot;)
+&amp;&amp; ShippingFeeManualFlag__c = TRUE
+&amp;&amp; NOT(ISPICKVAL(TransportationMode__c, &quot;ShippingOnly&quot;))
+&amp;&amp;
+/* 判定項目 */
+ISBLANK(Amount__c)</errorConditionFormula>
+    <errorDisplayField>Amount__c</errorDisplayField>
+    <errorMessage>「運賃」を入力してください。</errorMessage>
+</ValidationRule>

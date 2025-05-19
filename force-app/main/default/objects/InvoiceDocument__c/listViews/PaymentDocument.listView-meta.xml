@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PaymentDocument</fullName>
+    <columns>NAME</columns>
+    <columns>InvoiceDate__c</columns>
+    <columns>Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>ConsumptionTax_F__c</columns>
+    <columns>TotalPrice_F__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>支払書</value>
+    </filters>
+    <label>支払書</label>
+</ListView>

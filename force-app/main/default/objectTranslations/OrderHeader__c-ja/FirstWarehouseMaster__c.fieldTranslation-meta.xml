@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Firstピッキングの倉庫 --></label>
+    <name>FirstWarehouseMaster__c</name>
+    <relationshipLabel><!-- 注文 --></relationshipLabel>
+</CustomFieldTranslation>

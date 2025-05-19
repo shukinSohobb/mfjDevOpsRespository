@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 単位 --></label>
+    <name>Unit__c</name>
+    <picklistValues>
+        <masterLabel>キロ</masterLabel>
+        <translation><!-- キロ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ケース</masterLabel>
+        <translation><!-- ケース --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>パレット</masterLabel>
+        <translation><!-- パレット --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>本（個）</masterLabel>
+        <translation><!-- 本（個） --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

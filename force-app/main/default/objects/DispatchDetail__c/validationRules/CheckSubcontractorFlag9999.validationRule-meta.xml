@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckSubcontractorFlag9999</fullName>
+    <active>true</active>
+    <description>注文の状態は「受付」以外、注文の車番「9999」を設定の場合、チェックできない</description>
+    <errorConditionFormula>/* 判定条件 */
+ NOT( ISPICKVAL( OrderHeader__r.Status__c , &apos;Reception&apos;) ) 
+&amp;&amp;
+ OrderHeader__r.VehicleNumber__c  = &apos;9999&apos;
+&amp;&amp;
+/* 判定項目 */
+SubcontractorFlag__c</errorConditionFormula>
+    <errorDisplayField>SubcontractorFlag__c</errorDisplayField>
+    <errorMessage>注文車番が「9999」のため、傭車として設定できません。</errorMessage>
+</ValidationRule>

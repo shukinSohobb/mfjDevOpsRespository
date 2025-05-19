@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DriverMaster__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>・通常配車の場合、配車時に設定する。
+・富士エコー定期便の際、受注課の方が入力する。</description>
+    <label>ドライバー</label>
+    <referenceTo>DriverMaster__c</referenceTo>
+    <relationshipLabel>定期便情報</relationshipLabel>
+    <relationshipName>RegularServiceInformationList</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

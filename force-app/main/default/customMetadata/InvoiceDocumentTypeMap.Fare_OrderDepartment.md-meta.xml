@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>運賃(受注課)</label>
+    <protected>false</protected>
+    <values>
+        <field>AccountingDetailItem__c</field>
+        <value xsi:type="xsd:string">運賃</value>
+    </values>
+    <values>
+        <field>InvoiceDocumentType__c</field>
+        <value xsi:type="xsd:string">運送請求書</value>
+    </values>
+    <values>
+        <field>TargetDepartment__c</field>
+        <value xsi:type="xsd:string">受注課</value>
+    </values>
+</CustomMetadata>

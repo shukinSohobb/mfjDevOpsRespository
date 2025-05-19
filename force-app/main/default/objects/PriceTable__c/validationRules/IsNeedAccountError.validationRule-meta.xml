@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsNeedAccountError</fullName>
+    <active>true</active>
+    <description>取引先の入力が必要</description>
+    <errorConditionFormula>IF(Case(PriceTableType__c
+    , &apos;AccountTransfer&apos;, 1
+    , &apos;Small&apos;, 1
+    , &apos;StorageFee&apos;, 1
+    , 0
+  ) = 1
+    , True &amp;&amp; ISBLANK(Account__c)
+    , False
+)</errorConditionFormula>
+    <errorDisplayField>Account__c</errorDisplayField>
+    <errorMessage>「タイプ：小口便」、「タイプ：荷主横持」、「タイプ：保管料」の場合、「取引先」の入力が必須になります。</errorMessage>
+</ValidationRule>

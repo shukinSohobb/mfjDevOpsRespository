@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FreightTable_CompactTable</fullName>
+    <fields>Name</fields>
+    <fields>CarryOutDate__c</fields>
+    <fields>Account__c</fields>
+    <fields>PriceTableType__c</fields>
+    <fields>Active_F__c</fields>
+    <label>運賃管理_コンパクトレイアウト</label>
+</CompactLayout>

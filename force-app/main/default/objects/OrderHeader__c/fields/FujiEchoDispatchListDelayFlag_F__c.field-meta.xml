@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FujiEchoDispatchListDelayFlag_F__c</fullName>
+    <formula>IF(
+  /*配車完了と配車完了以降の状態：falseを返す*/
+  OR(
+    ISPICKVAL(Status__c, &quot;DispatchCompleted&quot;),
+    ISPICKVAL(Status__c, &quot;DeliveryCompleted&quot;),
+    ISPICKVAL(Status__c, &quot;Cancel&quot;),
+    ISPICKVAL(Status__c, &quot;InvoiceConfirmed&quot;)
+  ),
+  false,
+  AND(
+    NOT(
+      ISBLANK(ExpectedDeliveryDate__c) ||
+      ISBLANK(DispatchDetail_Cnt__c)
+    ),
+    OR(
+      Account__r.AccountCode__c = $CustomMetadata.MFJSetting__mdt.CreateShippingSalesReportParameter.Value4__c,
+      Account__r.Parent.AccountCode__c = $CustomMetadata.MFJSetting__mdt.CreateShippingSalesReportParameter.Value4__c
+    ),
+    IF(
+      AND(
+        NOT(ISBLANK(ShippingCompany__c)),
+        ISPICKVAL(ShippingCompany__r.Type, &quot;Subcontractor&quot;)
+      ),
+      TRUE,
+      OR(
+        ISBLANK(DriverMaster__c),
+        ISBLANK(VehicleNumber__c)
+      )
+    ),
+    NOW() &gt;
+						/* 納品日の前日 */
+      DATETIMEVALUE(
+        (ExpectedDeliveryDate__c - 1) + 5/24
+      ),
+    DispatchDetail_Cnt__c &gt; 0
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>富士エコーの配車組み確定遅延フラグ</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductStockInfo__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Raysheetに入力が必要な必須項目</description>
+    <label>在庫情報</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>商品名が一致していません。</errorMessage>
+        <filterItems>
+            <field>ProductStockInfo__c.ProductMaster__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.ProductMaster__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ProductStockInfo__c</referenceTo>
+    <relationshipLabel>ピッキングリスト</relationshipLabel>
+    <relationshipName>PickingList</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

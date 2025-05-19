@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 価格管理 --></label>
+    <name>PriceTable__c</name>
+    <relationshipLabel><!-- 運賃 --></relationshipLabel>
+</CustomFieldTranslation>

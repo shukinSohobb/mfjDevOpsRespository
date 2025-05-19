@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- タイプ --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>エレクターの請求</masterLabel>
+        <translation><!-- エレクターの請求 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>シャトレーゼの請求</masterLabel>
+        <translation><!-- シャトレーゼの請求 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>保管・荷役明細書</masterLabel>
+        <translation><!-- 保管・荷役明細書 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>出向者の請求</masterLabel>
+        <translation><!-- 出向者の請求 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>売上のマイナス明細</masterLabel>
+        <translation><!-- 売上のマイナス明細 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>恒温槽</masterLabel>
+        <translation><!-- 恒温槽 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>支払書</masterLabel>
+        <translation><!-- 支払書 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>請求書</masterLabel>
+        <translation><!-- 請求書 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>諸掛データ</masterLabel>
+        <translation><!-- 諸掛データ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>運送請求書</masterLabel>
+        <translation><!-- 運送請求書 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoiceAccountAndAccount</fullName>
+    <active>true</active>
+    <description>荷主と同じ系列かどうか</description>
+    <errorConditionFormula>/*判断要件*/
+Account__c != NULL &amp;&amp;
+InvoiceAccount__c != NULL &amp;&amp;
+/*判断項目*/
+(Account__r.ParentId &lt;&gt; InvoiceAccount__c) &amp;&amp;
+(Account__r.ParentId &lt;&gt; InvoiceAccount__r.ParentId) &amp;&amp;
+(Account__c &lt;&gt; InvoiceAccount__r.ParentId)</errorConditionFormula>
+    <errorDisplayField>InvoiceAccount__c</errorDisplayField>
+    <errorMessage>取引先と請求先取引先の親子関係が正しく設定されていません。取引先または請求先取引先の親子関係を確認してください。</errorMessage>
+</ValidationRule>

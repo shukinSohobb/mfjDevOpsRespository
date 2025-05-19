@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>注文</value>
+    </caseValues>
+    <layouts>
+        <layout>注文ページレイアウト</layout>
+        <sections>
+            <label><!-- OCR情報 --></label>
+            <section>OCR情報</section>
+        </sections>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- 「運賃」を入力してください。 --></errorMessage>
+        <name>AmountEmpty</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 荷主（配送会社）と契約を解除したため、「状態」を「受付確認済み」に変更できません。 --></errorMessage>
+        <name>CannotChangeToReceptionCompleted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 入力された「荷主」と契約を解除したため、注文を作成できません。 --></errorMessage>
+        <name>CannotCreateOrderHeaderAccountInactive</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 入力された「配送会社」と契約を解除したため、注文を作成できません。 --></errorMessage>
+        <name>CannotCreateOrderHeaderSCompanyInactive</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 車番が「9999」の場合、ドライバーを入力できません。 --></errorMessage>
+        <name>CheckDriverFor9999</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 車番が「9999」の場合、配送会社に「マルエス」を選択できません。 --></errorMessage>
+        <name>CheckShippingCompanyAccountCodeFor9999</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 車番が「9999」の場合、種別は「下請け業者」以外の配送会社は設定できません。 --></errorMessage>
+        <name>CheckShippingCompanyTypeFor9999</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 取引先と請求先取引先の親子関係が正しく設定されていません。取引先または請求先取引先の親子関係を確認してください。 --></errorMessage>
+        <name>InvoiceAccountAndAccount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文の「状態：配車完了」の後、「下請け運賃」と「配送会社」は変更できません。 --></errorMessage>
+        <name>LockAfterDispatchCompleted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文の「状態：請求処理済み」の後、「請求日」、「請求先（集計使用名）」、「キャンセル料」、「荷待ち料」、「注文明細の件数」は変更できません。 --></errorMessage>
+        <name>LockAfterInvoiceConfirmed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文の「状態：受付確認済み」の後、「荷主」、「請求不可」、「輸送形態」、「運賃」、「積込日」、「納品日」、「付帯作業費」は変更できません。 --></errorMessage>
+        <name>LockAfterReceptionCompleted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文の「状態：受付確認済み」の場合、「荷主」とのリンク、「着地」マスタとのリンク、「運賃計算用数量」、「運賃計算用単位」、「輸送形態」変更できません。 --></errorMessage>
+        <name>ReceptionCompleted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「請求日」を入力してください。 --></errorMessage>
+        <name>RequireBillingDateIfNotReception</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「路線便」の注文については、「受注確認済」または以降の状態に変更する前に、必ず配送会社を設定してください。 --></errorMessage>
+        <name>RequireShippingCompanyForRoute</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「下請け請求日」を入力してください。 --></errorMessage>
+        <name>RequireSubcontractBillingDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文の「状態：受付確認済み」の場合、荷主と配送会社の「締日」と「適応基準」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedAccBillingInfor</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「荷主」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedAccount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文の状態が「受付確認済み」の場合、「納品日」は「積込日」以上である必要があります。 --></errorMessage>
+        <name>ToReceptionCompletedCheckDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「着地」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedDestination</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「納品日」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedExpectedDeliveryDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「請求先（集計使用名）」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedInvoiceAccount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「積込日」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedLoadingDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「発地」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedOriginPlace</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文明細は「商品マスタ」とのリンクを設定してください。 --></errorMessage>
+        <name>ToReceptionCompletedProduct</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「運賃計算用数量」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedQuantityForShipping</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「輸送形態」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedTransportation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「着地」が路線便不可になっています。 --></errorMessage>
+        <name>ToReceptionCompletedTransportationMode</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 「運賃計算用単位」を入力してください。 --></errorMessage>
+        <name>ToReceptionCompletedUnitForShippingFee</name>
+    </validationRules>
+</CustomObjectTranslation>

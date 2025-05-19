@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotChangeToReceptionCompleted</fullName>
+    <active>true</active>
+    <description>荷主（配送会社）と契約を解除したため、「状態」を「受付確認済み」に変更できません。</description>
+    <errorConditionFormula>/* 判定条件 */
+(ISNEW() || ISPICKVAL( PRIORVALUE( Status__c ), &quot;Reception&quot;))
+&amp;&amp; ISPICKVAL( Status__c , &quot;ReceptionCompleted&quot;)
+&amp;&amp; NOT(ISPICKVAL(TransportationMode__c, &quot;ShippingOnly&quot;))
+&amp;&amp;
+/* 判定項目 */
+(NOT(Active_F__c) || ShippingCompany__r.DeliveryContractTermination__c)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>荷主（配送会社）と契約を解除したため、「状態」を「受付確認済み」に変更できません。</errorMessage>
+</ValidationRule>

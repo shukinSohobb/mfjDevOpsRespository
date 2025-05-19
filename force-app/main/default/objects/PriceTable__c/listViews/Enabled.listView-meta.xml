@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enabled</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>PriceTableType__c</columns>
+    <columns>Status__c</columns>
+    <columns>CarryOutDate__c</columns>
+    <columns>CanInvoiceActualCostFlag__c</columns>
+    <columns>CanPayActualCostFlag__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>有効</label>
+</ListView>

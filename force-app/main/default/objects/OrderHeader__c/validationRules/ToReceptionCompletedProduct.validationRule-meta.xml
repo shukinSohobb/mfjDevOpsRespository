@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ToReceptionCompletedProduct</fullName>
+    <active>true</active>
+    <description>受付確認済 に変更した時、関連注文明細の「商品マスタ」とのリンク設定してない場合</description>
+    <errorConditionFormula>/* 判定条件 */
+(ISNEW() || ISPICKVAL( PRIORVALUE( Status__c ), &quot;Reception&quot;))
+&amp;&amp; ISPICKVAL( Status__c , &quot;ReceptionCompleted&quot;)
+&amp;&amp; NOT(ISPICKVAL(TransportationMode__c, &quot;ShippingOnly&quot;))
+&amp;&amp;
+/* 判定項目 */
+OrderDetail_Cnt__c &lt;&gt; Product_Cnt__c</errorConditionFormula>
+    <errorMessage>注文明細は「商品マスタ」とのリンクを設定してください。</errorMessage>
+</ValidationRule>

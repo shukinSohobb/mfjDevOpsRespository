@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LockAccountingDetailCountAfterConfirmed</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+ISPICKVAL(Status__c, &apos;Confirmed&apos;)
+&amp;&amp; 
+/* 判定項目 */
+ISCHANGED(AccountingDetail_Cnt__c)</errorConditionFormula>
+    <errorMessage>請求書の「状態：処理済み」の場合、「仕分明細の件数」は変更できません。</errorMessage>
+</ValidationRule>

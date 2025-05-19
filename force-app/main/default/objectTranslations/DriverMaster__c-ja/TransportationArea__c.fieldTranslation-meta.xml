@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 運送範囲 --></label>
+    <name>TransportationArea__c</name>
+    <picklistValues>
+        <masterLabel>県内</masterLabel>
+        <translation><!-- 県内 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>県外</masterLabel>
+        <translation><!-- 県外 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

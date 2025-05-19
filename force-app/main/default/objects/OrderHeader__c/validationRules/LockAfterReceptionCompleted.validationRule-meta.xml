@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LockAfterReceptionCompleted</fullName>
+    <active>true</active>
+    <errorConditionFormula>/* 判定条件 */
+NOT(ISCHANGED(ManualUpdateDatetime__c))
+&amp;&amp;
+ NOT(ISPICKVAL(PRIORVALUE(Status__c), &apos;Reception&apos;)
+    || ISNEW()
+    || (ISBLANK(PRIORVALUE(ShippingFee__c)) &amp;&amp; NOT(ISBLANK(ShippingFee__c)))
+	)
+&amp;&amp;
+OR(
+    ISPICKVAL(Status__c, &apos;ReceptionCompleted&apos;),
+    ISPICKVAL(Status__c, &apos;DispatchCompleted&apos;),
+    ISPICKVAL(Status__c, &apos;DeliveryCompleted&apos;),
+    ISPICKVAL(Status__c, &apos;Cancel&apos;),
+    ISPICKVAL(Status__c, &apos;InvoiceConfirmed&apos;)
+)
+&amp;&amp; 
+/* 判定項目 */
+OR(
+    ISCHANGED(Amount__c),
+    ISCHANGED(Account__c),
+	ISCHANGED(BillingPriceConfirmed__c),
+    ISCHANGED(TransportationMode__c),
+    ISCHANGED(AncillaryWorkFee__c),
+    ISCHANGED(LoadingDate__c),
+    ISCHANGED(ExpectedDeliveryDate__c)
+)</errorConditionFormula>
+    <errorMessage>注文の「状態：受付確認済み」の後、「荷主」、「請求不可」、「輸送形態」、「運賃」、「積込日」、「納品日」、「付帯作業費」は変更できません。</errorMessage>
+</ValidationRule>

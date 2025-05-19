@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- ドライバー --></label>
+    <name>DriverMaster__c</name>
+    <relationshipLabel><!-- 倉庫間移動 --></relationshipLabel>
+</CustomFieldTranslation>

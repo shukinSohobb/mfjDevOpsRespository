@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 定期便情報# --></label>
+    <name>RegularServiceInformation__c</name>
+    <relationshipLabel><!-- 注文 --></relationshipLabel>
+</CustomFieldTranslation>

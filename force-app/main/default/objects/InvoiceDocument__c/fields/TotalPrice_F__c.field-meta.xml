@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalPrice_F__c</fullName>
+    <formula>/* 小計（税抜き）+ 小計（非課税） + 消費税（１０％）*/
+SubtotalTaxFree_F__c + SubtotalTaxExcluded_F__c + ConsumptionTax_F__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>合計</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

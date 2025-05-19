@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 状況 --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>作成中</masterLabel>
+        <translation><!-- 作成中 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>修正中</masterLabel>
+        <translation><!-- 修正中 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>却下</masterLabel>
+        <translation><!-- 却下 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>承認</masterLabel>
+        <translation><!-- 承認 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>承認待ち</masterLabel>
+        <translation><!-- 承認待ち --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

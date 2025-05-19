@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>受注課</fullName>
+        <default>false</default>
+        <label>受注課</label>
+    </customValue>
+    <customValue>
+        <fullName>倉庫課</fullName>
+        <default>false</default>
+        <label>倉庫課</label>
+    </customValue>
+    <masterLabel>売上対象課</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

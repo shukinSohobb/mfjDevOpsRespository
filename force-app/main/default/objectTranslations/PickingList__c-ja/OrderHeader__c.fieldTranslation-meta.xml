@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 注文 --></label>
+    <name>OrderHeader__c</name>
+    <relationshipLabel><!-- ピッキングリスト (注文) --></relationshipLabel>
+</CustomFieldTranslation>

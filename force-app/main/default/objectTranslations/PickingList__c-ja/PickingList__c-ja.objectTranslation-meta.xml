@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ピッキングリスト</value>
+    </caseValues>
+    <layouts>
+        <layout>ピッキングリストレイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- 注文の「状態：請求処理済」の場合、「ピッキングリスト」は変更できません。 --></errorMessage>
+        <name>CannotUpdate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 注文明細の「商品マスタ」とピッキングリストの「商品マスタ」は一致していません。 --></errorMessage>
+        <name>OrderDetailProductNotMatch</name>
+    </validationRules>
+</CustomObjectTranslation>

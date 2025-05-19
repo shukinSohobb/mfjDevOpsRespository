@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>QuantityForShippingFeeCalChangedNotification</fullName>
+        <description>配車課へ：運賃計算用数量の変更通知</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>DispatchDepartmentGroup</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MFJEmailTemplate/QuantityForShippingFeeCalChangedNotification</template>
+    </alerts>
+    <alerts>
+        <fullName>RecCompMailAlert</fullName>
+        <description>配車課へ：注文の積込場所変更の通知メール</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>DispatchDepartmentGroup</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MFJEmailTemplate/OrderHeaderLoadingChangedNoticeMail</template>
+    </alerts>
+    <alerts>
+        <fullName>ReceptionCompletedMail</fullName>
+        <ccEmails>mfj+ReceptionCompleted@sohobb.jp</ccEmails>
+        <description>荷主へ：注文の受付確認済のメール</description>
+        <protected>false</protected>
+        <recipients>
+            <field>AccountEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>MFJEmailTemplate/ReceptionCompletedMail</template>
+    </alerts>
+</Workflow>

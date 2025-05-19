@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>gcss__Type__c</name>
+    <picklistValues>
+        <masterLabel>Folder</masterLabel>
+        <translation>文件夹</translation>
+    </picklistValues>
+</CustomFieldTranslation>

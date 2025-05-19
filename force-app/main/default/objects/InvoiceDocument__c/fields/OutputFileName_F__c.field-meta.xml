@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OutputFileName_F__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+  Type__c, 
+    &quot;請求書&quot; , &quot;請求書&quot;, 
+    &quot;支払書&quot; , &quot;支払書&quot;,
+    &quot;運送請求書&quot;,&quot;運送請求書&quot;,
+    &quot;保管・荷役明細書&quot; , &quot;保管・荷役明細書&quot;, 
+    &quot;シャトレーゼの請求&quot; , &quot;シャトレーゼの請求&quot;,
+    &quot;出向者の請求&quot; , &quot;出向者の請求&quot;, 
+    &quot;エレクターの請求&quot; , &quot;エレクターの請求&quot;,
+    &quot;恒温槽&quot; , &quot;恒温槽&quot;, 
+    &quot;支売上のマイナス明細&quot; , &quot;売上のマイナス明細&quot;,
+    &quot;諸掛データ&quot; , &quot;諸掛データ&quot;,
+
+    &quot;&quot;
+)  +&apos;_&apos; + SUBSTITUTE(TEXT(TODAY()), &quot;-&quot;, &quot;&quot;) &amp;MID(TEXT(NOW()+ (9/24)), 12, 2) &amp;MID(TEXT(NOW() + (9/24)), 15, 2) &amp;MID(TEXT(NOW() + (9/24)), 18, 2)</formula>
+    <label>帳票ファイル名</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ToReceptionCompletedCheckDate</fullName>
+    <active>true</active>
+    <description>注文の状態について、受付から受付確認済みに変更の時、「納品日」≧「積込日」の判断が必要です</description>
+    <errorConditionFormula>AND(
+ TEXT( PRIORVALUE(Status__c) )  = &apos;Reception&apos;,
+  TEXT(Status__c ) = &apos;ReceptionCompleted&apos;,
+ ExpectedDeliveryDate__c  &lt;  LoadingDate__c )</errorConditionFormula>
+    <errorMessage>注文の状態が「受付確認済み」の場合、「納品日」は「積込日」以上である必要があります。</errorMessage>
+</ValidationRule>

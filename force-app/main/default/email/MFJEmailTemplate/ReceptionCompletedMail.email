@@ -1,0 +1,21 @@
+{!OrderHeader__c.Account__c} 御中
+
+お世話になっております。
+
+下記の注文が確定されましたので、ご連絡いたします。
+----------------------------------------------
+注文#：{!OrderHeader__c.Name}
+依頼番号：{!OrderHeader__c.OrderNumber__c}
+受付日：{!OrderHeader__c.ReceptionDatetime__c}
+受付確認日時：{!OrderHeader__c.ReceptionCompletedDatetime__c}
+商品：{!OrderHeader__c.FirstProductName_F__c}
+金額：{!OrderHeader__c.Amount__c}
+納品日：{!OrderHeader__c.ExpectedDeliveryDate__c}
+発地：{!OrderHeader__c.OriginPlace__c}
+着地：{!OrderHeader__c.Destination__c}
+備考：{!OrderHeader__c.Remarks2__c}
+----------------------------------------------
+
+以上となります、よろしくお願いいたします。
+
+株式会社マルエスフリージングジャンクション

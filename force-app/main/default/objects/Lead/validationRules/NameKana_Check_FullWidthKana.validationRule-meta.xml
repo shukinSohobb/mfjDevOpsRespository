@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NameKana_Check_FullWidthKana</fullName>
+    <active>true</active>
+    <description>全角カナ・半角空白以外はエラーを出します。</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(NameKana__c)),
+NOT(REGEX(NameKana__c, &quot;^[ァ-ー ]+$&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>NameKana__c</errorDisplayField>
+    <errorMessage>全角カタカナ・半角空白で入力してください。</errorMessage>
+</ValidationRule>

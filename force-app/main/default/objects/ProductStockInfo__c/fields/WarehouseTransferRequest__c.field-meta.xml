@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WarehouseTransferRequest__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>倉庫間移動</label>
+    <referenceTo>WarehouseTransferRequest__c</referenceTo>
+    <relationshipLabel>在庫情報</relationshipLabel>
+    <relationshipName>ProductStockInfoList</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

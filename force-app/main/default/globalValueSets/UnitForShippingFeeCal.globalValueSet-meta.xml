@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Case</fullName>
+        <default>true</default>
+        <label>ケース</label>
+    </customValue>
+    <customValue>
+        <fullName>Pallet</fullName>
+        <default>false</default>
+        <label>パレート</label>
+    </customValue>
+    <customValue>
+        <fullName>Kou</fullName>
+        <default>false</default>
+        <label>甲</label>
+    </customValue>
+    <customValue>
+        <fullName>Ton</fullName>
+        <default>false</default>
+        <label>トン</label>
+    </customValue>
+    <masterLabel>運賃計算用単位</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LoadingPlaceChangedFlag_F__c</fullName>
+    <description>Firstピッキング倉庫名と注文の倉庫名が一致しない場合、Trueを返す</description>
+    <formula>IF( FirstPickingWarehouseMasterName_F__c != WarehouseMasterName_F__c, true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>積込場所変更フラグ</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

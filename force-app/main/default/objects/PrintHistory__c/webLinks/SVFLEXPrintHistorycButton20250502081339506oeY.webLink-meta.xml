@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SVFLEXPrintHistorycButton20250502081339506oeY</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>配車表 - 帳票</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/svfcloud__PreviewPage?appId=PrintHistory__c&amp;id={!PrintHistory__c.Id}&amp;buttonFullName=SVFPrintHistorycButton20250502081339506oeY</url>
+</WebLink>

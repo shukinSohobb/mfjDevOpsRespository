@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 調整元在庫情報 --></label>
+    <name>TargetProductStockInfo__c</name>
+    <relationshipLabel><!-- 在庫情報 --></relationshipLabel>
+</CustomFieldTranslation>

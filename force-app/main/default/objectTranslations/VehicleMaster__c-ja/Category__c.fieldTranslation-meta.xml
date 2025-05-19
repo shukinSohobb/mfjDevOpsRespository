@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 輸送管理区分 --></label>
+    <name>Category__c</name>
+    <picklistValues>
+        <masterLabel>ドライ</masterLabel>
+        <translation><!-- ドライ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>冷凍</masterLabel>
+        <translation><!-- 冷凍 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>冷蔵</masterLabel>
+        <translation><!-- 冷蔵 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>指定なし</masterLabel>
+        <translation><!-- 指定なし --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

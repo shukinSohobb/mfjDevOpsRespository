@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Before_SetValue</name>
+        <label>Before_SetValue</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Amount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Amount_F</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <description>単価はNOTNULLの場合、運賃を設定する
+単価はNULLの場合、(運賃計算用数量？NULL:1,運賃計算用数量)＊単価</description>
+        <name>Amount_F</name>
+        <dataType>Currency</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.UnitPrice__c}))   
+  , BLANKVALUE({!$Record.QuantityForShippingFeeCal__c}, 1) * {!$Record.UnitPrice__c}
+  , {!$Record.Amount__c}
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>定期便情報の高速フロー {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>定期便情報の高速フロー</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Before_SetValue</targetReference>
+        </connector>
+        <object>RegularServiceInformation__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

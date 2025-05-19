@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DayOfWeek_F__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Monday__c, &apos;月;&apos;, &apos;&apos;) &amp;
+IF(Tuesday__c, &apos;火;&apos;, &apos;&apos;) &amp;
+IF(Wednesday__c, &apos;水;&apos;, &apos;&apos;) &amp;
+IF(Thursday__c, &apos;木;&apos;, &apos;&apos;) &amp;
+IF(Friday__c, &apos;金;&apos;, &apos;&apos;) &amp;
+IF(Saturday__c, &apos;土;&apos;, &apos;&apos;) &amp;
+IF(Sunday__c, &apos;日;&apos;, &apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>曜日</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

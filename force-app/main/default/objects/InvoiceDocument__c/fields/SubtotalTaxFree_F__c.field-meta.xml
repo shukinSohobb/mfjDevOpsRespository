@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SubtotalTaxFree_F__c</fullName>
+    <formula>CASE(Type__c,
+  /* if 請求書：運送明細書と保管・荷役明細書と諸掛明細書の積み上げ金額（非課税）の合計 */
+  &quot;請求書&quot;,
+    TransportDocument__r.InvoiceAmountTaxFree_Sum__c +
+    StorageHandlingDocument__r.InvoiceAmountTaxFree_Sum__c +
+    MiscChargesDocument__r.InvoiceAmountTaxFree_Sum__c,
+  /* elseif 支払書： 積み上げ金額（非課税）*/
+  &quot;支払書&quot;,
+    InvoiceAmountTaxFree_Sum__c,
+  /* else：積み上げ金額（非課税） */
+    InvoiceAmountTaxFree_Sum__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>小計（非課税）</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LotNumber_F__c</fullName>
+    <externalId>false</externalId>
+    <formula>ProductMaster__r.ProductCode__c
++
+&quot;_&quot;
++
+SUBSTITUTE(
+    IF(
+        NOT(ISBLANK(ProductMaster__r.Account__c)),
+        CASE(
+            ProductMaster__r.Account__r.AllocationPriority__c,
+            &quot;ArrivalDate&quot;, TEXT(ArrivalDate__c),
+            &quot;ManufactureDate&quot;, TEXT(ManufactureDate__c),
+            &quot;ExpirationDate&quot;, TEXT(ExpirationDate__c),
+            &quot;LotNumber&quot;,DesignatedLot__c,
+            &quot;&quot;
+        ), &quot;&quot;
+    ), &quot;-&quot;, &quot;&quot; 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>指定ロット番号</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

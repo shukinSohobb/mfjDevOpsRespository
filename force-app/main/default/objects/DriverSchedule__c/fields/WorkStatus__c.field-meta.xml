@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WorkStatus__c</fullName>
+    <label>勤務状況</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>WorkDay</fullName>
+                <default>true</default>
+                <label>勤務</label>
+            </value>
+            <value>
+                <fullName>DayOff</fullName>
+                <default>false</default>
+                <label>休み（有給）</label>
+            </value>
+            <value>
+                <fullName>WeeklyOff</fullName>
+                <default>false</default>
+                <label>定休</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

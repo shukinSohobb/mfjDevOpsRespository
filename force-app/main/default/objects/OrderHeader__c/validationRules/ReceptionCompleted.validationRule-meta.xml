@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReceptionCompleted</fullName>
+    <active>true</active>
+    <description>受付確認済 の場合、「荷主」とのリンク、「着地」マスタとのリンク、「数量」、「単位」、「輸送形態」変更した場合</description>
+    <errorConditionFormula>AND(
+    NOT(ISCHANGED(ManualUpdateDatetime__c)),
+    ISPICKVAL(Status__c, &quot;ReceptionCompleted&quot;),
+    Account__c &lt;&gt; PRIORVALUE(Account__c),
+    Destination__c &lt;&gt; PRIORVALUE(Destination__c),
+    QuantityForShippingFeeCal__c &lt;&gt; PRIORVALUE(QuantityForShippingFeeCal__c),
+    TEXT(UnitForShippingFeeCal__c) &lt;&gt; PRIORVALUE(UnitForShippingFeeCal__c),
+    TEXT(TransportationMode__c) &lt;&gt; PRIORVALUE(TransportationMode__c)
+)</errorConditionFormula>
+    <errorMessage>注文の「状態：受付確認済み」の場合、「荷主」とのリンク、「着地」マスタとのリンク、「運賃計算用数量」、「運賃計算用単位」、「輸送形態」変更できません。</errorMessage>
+</ValidationRule>

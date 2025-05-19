@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Permission Key --></label>
+    <name>gcss__PermissionKey__c</name>
+    <picklistValues>
+        <masterLabel>Design Views</masterLabel>
+        <translation>设计视图</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Edit Favorites</masterLabel>
+        <translation>编辑收藏夹</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Edit Records</masterLabel>
+        <translation>编辑记录</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Export Records</masterLabel>
+        <translation>导出记录</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manage Views</masterLabel>
+        <translation>管理视图</translation>
+    </picklistValues>
+</CustomFieldTranslation>
