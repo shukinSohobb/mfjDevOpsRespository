@@ -50,7 +50,7 @@
     </decisions>
     <decisions>
         <name>HaveDispatchDetail</name>
-        <label>配車明細を取得かどうか</label>
+        <label>重複自社車両の配車明細の取得確認</label>
         <locationX>182</locationX>
         <locationY>431</locationY>
         <defaultConnector>
@@ -146,7 +146,7 @@
     </recordLookups>
     <recordLookups>
         <name>GetDispatchDetail</name>
-        <label>配車明細を取得</label>
+        <label>期間内に重複自社車両がある配車明細を取得</label>
         <locationX>182</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -154,20 +154,6 @@
             <targetReference>HaveDispatchDetail</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
-        <filters>
-            <field>VehicleMaster__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.VehicleMaster__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>VehicleMaster__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <filters>
             <field>Id</field>
             <operator>NotEqualTo</operator>
@@ -189,6 +175,20 @@
                 <elementReference>$Record.LoadingDate_F__c</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>VehicleMaster__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.VehicleMaster__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>VehicleMaster__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>DispatchDetail__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -199,7 +199,7 @@
         <connector>
             <targetReference>GetDispatchDetail</targetReference>
         </connector>
-        <filterLogic>1 AND 2 AND 3 AND 4 AND 5 AND (6 OR 7)</filterLogic>
+        <filterLogic>(1 OR 2) AND 3 AND 4 AND 5</filterLogic>
         <filters>
             <field>DriverMaster__c</field>
             <operator>IsNull</operator>
@@ -235,23 +235,9 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <filters>
-            <field>DriverMaster__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>VehicleMaster__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
         <object>DispatchDetail__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
 </Flow>

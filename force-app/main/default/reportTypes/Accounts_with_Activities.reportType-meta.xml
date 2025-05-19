@@ -438,17 +438,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>DeliveryContractEndDate__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>WarehouseContractStartDate__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>WarehouseContractEndDate__c</field>
             <table>Account</table>
         </columns>
         <columns>

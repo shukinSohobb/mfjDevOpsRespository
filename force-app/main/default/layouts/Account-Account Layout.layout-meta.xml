@@ -47,15 +47,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>DeliveryContractEndDate__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>WarehouseContractStartDate__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>WarehouseContractEndDate__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

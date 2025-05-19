@@ -231,7 +231,6 @@
         <members>Account.CancelPolicy__c</members>
         <members>Account.ClientHandler1__c</members>
         <members>Account.ClosingDate__c</members>
-        <members>Account.DeliveryContractEndDate__c</members>
         <members>Account.DeliveryContractStartDate__c</members>
         <members>Account.DeliveryContractTermination__c</members>
         <members>Account.InvoiceTaxType__c</members>
@@ -248,7 +247,6 @@
         <members>Account.SFDC_RuisekiClose_Amount__c</members>
         <members>Account.TaxRoundingMethod__c</members>
         <members>Account.TermCategory__c</members>
-        <members>Account.WarehouseContractEndDate__c</members>
         <members>Account.WarehouseContractStartDate__c</members>
         <members>Account.WarehouseContractTermination__c</members>
         <members>AccountContactRelation.Relationship_Strength__c</members>
@@ -3485,6 +3483,7 @@
         <members>OrderHeader__c.RequireSubcontractBillingDate</members>
         <members>OrderHeader__c.ToReceptionCompletedAccBillingInfor</members>
         <members>OrderHeader__c.ToReceptionCompletedAccount</members>
+        <members>OrderHeader__c.ToReceptionCompletedCheckDate</members>
         <members>OrderHeader__c.ToReceptionCompletedDestination</members>
         <members>OrderHeader__c.ToReceptionCompletedExpectedDeliveryDate</members>
         <members>OrderHeader__c.ToReceptionCompletedInvoiceAccount</members>

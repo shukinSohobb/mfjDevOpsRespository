@@ -97,12 +97,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.PrintDateTime__c</fieldItem>
                 <identifier>RecordPrintDateTime__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.PrintHistory__c</fieldItem>
                 <identifier>RecordPrintHistory__cField</identifier>
             </fieldInstance>
@@ -119,6 +127,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.ProductStockInfo__c</fieldItem>
                 <identifier>RecordInventoryInformation_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.ProductMaster__c</fieldItem>
+                <identifier>RecordProductMaster_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

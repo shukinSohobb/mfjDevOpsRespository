@@ -160,28 +160,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.DeliveryContractEndDate__c</fieldItem>
-                <identifier>RecordDeliveryContractEndDate__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.WarehouseContractStartDate__c</fieldItem>
                 <identifier>RecordWarehouseContractStartDate__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.WarehouseContractEndDate__c</fieldItem>
-                <identifier>RecordWarehouseContractEndDate__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

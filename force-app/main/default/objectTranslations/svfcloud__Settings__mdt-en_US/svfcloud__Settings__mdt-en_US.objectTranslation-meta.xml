@@ -8,5 +8,16 @@
         <plural>true</plural>
         <value><!-- Settings --></value>
     </caseValues>
+    <layouts>
+        <layout>Settingsレイアウト</layout>
+        <sections>
+            <label>Custom Links</label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label>Client Authentication Information</label>
+            <section>クライアント認証情報</section>
+        </sections>
+    </layouts>
     <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

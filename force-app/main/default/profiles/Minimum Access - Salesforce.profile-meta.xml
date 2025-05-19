@@ -368,11 +368,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.DeliveryContractEndDate__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.DeliveryContractStartDate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -524,11 +519,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Type</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.WarehouseContractEndDate__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
